@@ -81,9 +81,34 @@ def load_cams():
     for line in text.splitlines():
         mid = re.search(r'\bid:\s*"([^"]+)"', line)
         myt = re.search(r'\byt:\s*"([\w-]{11})"', line)
+        mimg = re.search(r'\bimg:\s*"([^"]+)"', line)
+        mvid = re.search(r'\bvideo:\s*"([^"]+)"', line)
         if mid and myt:
             cams.append({"id": mid.group(1), "yt": myt.group(1)})
+        elif mid and mimg:
+            cams.append({"id": mid.group(1), "img": mimg.group(1), "video": mvid.group(1) if mvid else None})
     return cams
+
+
+def check_image(url, tries=3):
+    """Tarayıcı gibi (site adresiyle) art arda birkaç kez ister; hepsinde gerçek bir görüntü gelmeli."""
+    hdr = dict(HEADERS, Referer="https://kod34x-png.github.io/seyr/", Accept="image/avif,image/webp,image/*,*/*")
+    hdr.pop("Cookie", None)
+    for n in range(tries):
+        sep = "&" if "?" in url else "?"
+        req = urllib.request.Request(f"{url}{sep}t={int(time.time() * 1000)}", headers=hdr)
+        try:
+            with urllib.request.urlopen(req, timeout=20) as r:
+                ct = r.headers.get("Content-Type", "")
+                size = len(r.read())
+                if r.status != 200 or size < 6000 or not (ct.startswith("image") or ct == "application/octet-stream"):
+                    return False, f"{r.status} {ct} {size}B (deneme {n + 1})"
+        except urllib.error.HTTPError as e:
+            return False, f"HTTP {e.code} (deneme {n + 1})"
+        except Exception as e:
+            return False, f"{type(e).__name__} (deneme {n + 1})"
+        time.sleep(2)
+    return True, "ok"
 
 
 def main():
@@ -97,6 +122,14 @@ def main():
 
     out = {}
     for cam in cams:
+        if "img" in cam:
+            ok, why = check_image(cam["img"])
+            if ok and cam.get("video"):
+                code, _, _ = get(cam["video"])
+                ok, why = (code == 200), f"video {code}"
+            out[cam["id"]] = {"ok": ok, "state": "img", "why": why}
+            print(f'{cam["id"]:24} {"OK " if ok else "YOK"} {why}')
+            continue
         p = prev.get(cam["id"], {})
         # Daha önce bulunmuş güncel adres varsa önce onu dene.
         candidates = [v for v in [p.get("yt"), cam["yt"]] if v]
