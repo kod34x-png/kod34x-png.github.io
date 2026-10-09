@@ -82,8 +82,19 @@
   let favs = new Set(store.get("seyr.favs", []));
   const saveFavs = () => store.set("seyr.favs", [...favs]);
   let broken = store.get("seyr.broken", {});
-  const DOWN_MS = 6 * 3600e3;
-  const isUp = c => !broken[c.id] || Date.now() - broken[c.id] > DOWN_MS;
+  const DOWN_MS = 30 * 60e3;
+  const bkey = c => `${c.id}:${c.yt}`;
+  const isUp = c => !c.serverDown && (!broken[bkey(c)] || Date.now() - broken[bkey(c)] > DOWN_MS);
+
+  // Günlük yayın bekçisinin (GitHub Actions) yazdığı durum: yeni adresler ve kapalı yayınlar.
+  function applyStatus(st) {
+    if (!st || !st.cams) return;
+    CAMS.forEach(c => {
+      const s = st.cams[c.id]; if (!s) return;
+      if (s.yt) c.yt = s.yt;
+      c.serverDown = s.ok === false;
+    });
+  }
   const upCams = () => CAMS.filter(isUp);
 
   // ---------- toast ----------
@@ -150,11 +161,16 @@
   let map, pinLayer, nightLayer;
   function initMap() {
     if (!window.L) return;
-    map = L.map("map", { zoomControl: false, worldCopyJump: true, minZoom: 1, zoomSnap: 0.1, attributionControl: true });
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      subdomains: "abcd", maxZoom: 10,
-    }).addTo(map);
+    map = L.map("map", {
+      zoomControl: false, minZoom: 1, maxZoom: 6, zoomSnap: 0.1, attributionControl: true,
+      maxBounds: [[-75, -200], [85, 200]], maxBoundsViscosity: 0.8,
+    });
+    map.attributionControl.setPrefix(false);
+    map.attributionControl.addAttribution('<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a>');
+    // Dünya haritası uygulamanın içinde: dış servise ve anahtara bağlı değil.
+    fetch("lib/land.json").then(r => r.json()).then(land => {
+      L.geoJSON(land, { interactive: false, style: { fillColor: "#2B4262", fillOpacity: 1, color: "#3A5679", weight: 0.6 } }).addTo(map).bringToBack();
+    }).catch(() => {});
     nightLayer = L.layerGroup().addTo(map);
     pinLayer = L.layerGroup().addTo(map);
     fitWorld();
@@ -178,7 +194,7 @@
     }
     const pole = dec > 0 ? -85 : 85;
     const poly = pts.concat([[pole, 540], [pole, -540]]);
-    L.polygon(poly, { stroke: false, fillColor: "#020814", fillOpacity: 0.55, interactive: false, className: "night-shade" }).addTo(nightLayer);
+    L.polygon(poly, { stroke: false, fillColor: "#030A16", fillOpacity: 0.6, interactive: false }).addTo(nightLayer);
     // alacakaranlık şeridi
     const band = pts.map(([la, lo]) => [la, lo]);
     L.polyline(band, { color: "#E07A8F", weight: 1.2, opacity: 0.45, interactive: false }).addTo(nightLayer);
@@ -360,7 +376,7 @@
   // ---------- kapalı yayın ----------
   function markDown(i) {
     const c = feedList[i]; if (!c) return;
-    broken[c.id] = Date.now(); store.set("seyr.broken", broken);
+    broken[bkey(c)] = Date.now(); store.set("seyr.broken", broken);
     const el = slideEl(i); if (!el) return;
     const d = document.createElement("div"); d.className = "down"; d.textContent = t("down");
     el.querySelector(".frame").appendChild(d);
@@ -414,6 +430,14 @@
   // ---------- başlat ----------
   initMap();
   renderHome();
+  // Bekçinin son sonucu GitHub'dan doğrudan okunur (site yeniden yayınlanmayı beklemeden), olmazsa yerel kopya.
+  const STATUS_URL = "https://raw.githubusercontent.com/kod34x-png/kod34x-png.github.io/main/seyr/status.json";
+  fetch(STATUS_URL, { cache: "no-store" }).then(r => r.ok ? r : fetch("status.json", { cache: "no-store" }))
+    .catch(() => fetch("status.json", { cache: "no-store" }))
+    .then(r => r.ok ? r.json() : null).then(st => {
+    applyStatus(st);
+    if (!playerOpen) renderHome();
+  }).catch(() => {});
   const want = new URLSearchParams(location.search).get("cam");
   if (want) {
     const list = upCams();
