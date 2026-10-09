@@ -12,6 +12,9 @@ window.SEYR_CAMS = [
   { id: "spanish-town", city: "Spanish Town", cityEn: "Spanish Town", country: "Jamaika", countryEn: "Jamaica", flag: "🇯🇲", continent: "amerika", lat: 17.991, lon: -76.957, tz: "America/Jamaica", yt: "KBnlexbryqE", spot: "Şehir caddesi", spotEn: "Town street", source: "See Jamaica" },
   { id: "curacao", city: "Willemstad", cityEn: "Willemstad", country: "Curaçao", countryEn: "Curaçao", flag: "🇨🇼", continent: "amerika", lat: 12.09, lon: -68.9, tz: "America/Curacao", yt: "loHbMM9JfCs", spot: "Mambo Plajı", spotEn: "Mambo Beach", source: "SHOWME Caribbean" },
 
+  { id: "meksiko-zocalo", city: "Meksiko", cityEn: "Mexico City", country: "Meksika", countryEn: "Mexico", flag: "🇲🇽", continent: "amerika", lat: 19.4326, lon: -99.1332, tz: "America/Mexico_City", yt: "Z7bECtLg40A", spot: "Zócalo Meydanı", spotEn: "Zócalo square", source: "YouTube" },
+  { id: "cancun", city: "Cancún", cityEn: "Cancún", country: "Meksika", countryEn: "Mexico", flag: "🇲🇽", continent: "amerika", lat: 21.137, lon: -86.75, tz: "America/Cancun", yt: "zhRcRgZEoQw", spot: "Sahil", spotEn: "Beachfront", source: "YouTube" },
+
   // Avrupa
   { id: "venedik", city: "Venedik", cityEn: "Venice", country: "İtalya", countryEn: "Italy", flag: "🇮🇹", continent: "avrupa", lat: 45.438, lon: 12.336, tz: "Europe/Rome", yt: "x4AlaibltlA", spot: "Büyük Kanal ve Rialto Köprüsü", spotEn: "Grand Canal and Rialto Bridge", source: "SkylineWebcams" },
   { id: "venedik-tur", city: "Venedik", cityEn: "Venice", country: "İtalya", countryEn: "Italy", flag: "🇮🇹", continent: "avrupa", lat: 45.434, lon: 12.339, tz: "Europe/Rome", yt: "a1mcaV3Sf9U", spot: "Şehir kameraları turu", spotEn: "Rotating city cams", source: "I Love You Venice" },
@@ -30,6 +33,11 @@ window.SEYR_CAMS = [
   { id: "fuji", city: "Fuji Dağı", cityEn: "Mount Fuji", country: "Japonya", countryEn: "Japan", flag: "🇯🇵", continent: "asya", lat: 35.51, lon: 138.76, tz: "Asia/Tokyo", yt: "Sv9hcJ3k5h4", spot: "Kawaguchi Gölü'nden", spotEn: "From Lake Kawaguchi", source: "YouTube" },
   { id: "seul", city: "Seul", cityEn: "Seoul", country: "Güney Kore", countryEn: "South Korea", flag: "🇰🇷", continent: "asya", lat: 37.5512, lon: 126.9882, tz: "Asia/Seoul", yt: "3Uf3w-UHB4U", spot: "Namsan Kulesi'nden", spotEn: "From Namsan Tower", source: "YouTube" },
   { id: "busan", city: "Busan", cityEn: "Busan", country: "Güney Kore", countryEn: "South Korea", flag: "🇰🇷", continent: "asya", lat: 35.153, lon: 129.122, tz: "Asia/Seoul", yt: "OSnuM2fNovg", spot: "Gwangan Köprüsü", spotEn: "Gwangan Bridge", source: "YouTube" },
+
+  { id: "seul-myeongdong", city: "Seul", cityEn: "Seoul", country: "Güney Kore", countryEn: "South Korea", flag: "🇰🇷", continent: "asya", lat: 37.5633, lon: 126.987, tz: "Asia/Seoul", yt: "0iElYWnfHZM", spot: "Myeongdong Katedrali meydanı", spotEn: "Myeongdong Cathedral plaza", source: "YouTube" },
+  { id: "seul-han", city: "Seul", cityEn: "Seoul", country: "Güney Kore", countryEn: "South Korea", flag: "🇰🇷", continent: "asya", lat: 37.5407, lon: 126.926, tz: "Asia/Seoul", yt: "_gmTN6ssF7I", spot: "Han Nehri ve Seogang Köprüsü", spotEn: "Han River and Seogang Bridge", source: "YouTube" },
+  { id: "seul-ddp", city: "Seul", cityEn: "Seoul", country: "Güney Kore", countryEn: "South Korea", flag: "🇰🇷", continent: "asya", lat: 37.5665, lon: 127.0092, tz: "Asia/Seoul", yt: "GOt7UVVp-5Y", spot: "Dongdaemun Tasarım Meydanı", spotEn: "Dongdaemun Design Plaza", source: "YouTube" },
+  { id: "bangkok", city: "Bangkok", cityEn: "Bangkok", country: "Tayland", countryEn: "Thailand", flag: "🇹🇭", continent: "asya", lat: 13.738, lon: 100.5577, tz: "Asia/Bangkok", yt: "Q71sLS8h9a4", spot: "Sukhumvit Caddesi", spotEn: "Sukhumvit Road", source: "YouTube" },
 
   // Okyanusya
   { id: "melbourne", city: "Melbourne", cityEn: "Melbourne", country: "Avustralya", countryEn: "Australia", flag: "🇦🇺", continent: "okyanusya", lat: -37.8136, lon: 144.9631, tz: "Australia/Melbourne", yt: "gEbrHdFRgpQ", spot: "Şehir kavşağı", spotEn: "City intersection", source: "Cityscape Live" },
