@@ -163,3 +163,19 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--sun); outline-o
   .live-dot, .hint { animation: none; }
   .go:active { transform: none; }
 }
+
+/* Tek oynatıcı sahnesi: kaydırmayı engellemesin diye dokunuşları geçirir */
+.stage { z-index: 2; background: #000; pointer-events: none; transition: opacity .18s ease; }
+.stage.moving { opacity: 0; }
+.stage #ytBox, .stage #stageImg, .stage #stageVid { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.stage[data-mode="yt"] #stageImg, .stage[data-mode="yt"] #stageVid,
+.stage[data-mode="img"] #ytBox, .stage[data-mode="img"] #stageVid,
+.stage[data-mode="clip"] #ytBox, .stage[data-mode="clip"] #stageImg { display: none; }
+.stage .down { z-index: 3; }
+.tap-sound {
+  position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); z-index: 4;
+  pointer-events: auto; padding: 11px 18px; border: 0; border-radius: 999px;
+  background: var(--sun); color: #2A1A00; font-weight: 700; font-size: 15px; white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(0,0,0,.4);
+}
+@media (prefers-reduced-motion: reduce) { .stage { transition: none; } }

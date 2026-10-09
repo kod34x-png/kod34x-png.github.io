@@ -27,6 +27,7 @@
       copied: "Link kopyalandı", added: "Favorilere eklendi", removed: "Favorilerden çıkarıldı",
       source: s => `Yayın: ${s}`, shareText: c => `Şu an ${c} canlı, Seyr'de izliyorum:`,
       langBtn: "EN", back: "Geri", home: "Haritaya dön",
+      tapSound: "Sesi açmak için dokun", imgNote: "Birkaç saniyede bir yenilenir", clipNote: "Kısa canlı klip, sessiz",
     },
     en: {
       live: n => `${n} places live right now`,
@@ -43,6 +44,7 @@
       copied: "Link copied", added: "Added to favourites", removed: "Removed from favourites",
       source: s => `Stream: ${s}`, shareText: c => `${c} is live right now, watching on Seyr:`,
       langBtn: "TR", back: "Back", home: "Back to map",
+      tapSound: "Tap to turn sound on", imgNote: "Refreshes every few seconds", clipNote: "Short live clip, no sound",
     },
   };
   let lang = store.get("seyr.lang", (navigator.language || "tr").toLowerCase().startsWith("tr") ? "tr" : "en");
@@ -76,7 +78,7 @@
   }
   const sunClass = s => (s === "day" ? "sun-day" : s === "night" ? "sun-night" : "sun-twilight");
   const localTime = c => new Intl.DateTimeFormat(lang === "tr" ? "tr-TR" : "en-GB", { hour: "2-digit", minute: "2-digit", timeZone: c.tz }).format(new Date());
-  const thumb = c => `https://i.ytimg.com/vi/${c.yt}/hqdefault.jpg`;
+  const thumb = c => (c.yt ? `https://i.ytimg.com/vi/${c.yt}/hqdefault.jpg` : `${c.img}${c.img.includes("?") ? "&" : "?"}t=${Math.floor(Date.now() / 300e3)}`);
 
   // ---------- favoriler ve kapalı yayınlar ----------
   let favs = new Set(store.get("seyr.favs", []));
@@ -224,8 +226,12 @@
   }
 
   // ---------- izleme ----------
-  let feedList = [], active = -1, ytPlayer = null, soundOn = false, playerOpen = false;
+  // Tek bir oynatıcı (sahne) kullanılır; kaydırınca içindeki yayın değişir.
+  // Böylece ses bir kez açıldığında bütün yayınlarda açık kalır.
+  let feedList = [], active = -1, ytPlayer = null, playerOpen = false;
+  let soundOn = store.get("seyr.sound", true);
   const feed = $("#feed");
+  const stage = $("#stage"), stageImg = $("#stageImg"), stageVid = $("#stageVid"), tapSound = $("#tapSound"), stageDown = $("#stageDown");
   const ICON = {
     heart: '<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-8.6C1.3 8.4 3 5 6.4 5c2 0 3.3 1.1 4.1 2.4h3c.8-1.3 2.1-2.4 4.1-2.4 3.4 0 5.1 3.4 3.6 6.4C19 15.6 12 20 12 20z"/></svg>',
     share: '<svg viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/></svg>',
@@ -233,22 +239,25 @@
     mute: '<svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4zM17 9l4 6M21 9l-4 6"/></svg>',
     sound: '<svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4zM17 8.5a5 5 0 010 7M19.5 6a8.5 8.5 0 010 12"/></svg>',
   };
+  const camType = c => c.type || "yt";
+  const sourceLink = c => (camType(c) === "yt" ? `https://www.youtube.com/watch?v=${c.yt}` : c.link);
 
   function slideHTML(c, i) {
+    const silent = camType(c) !== "yt";
     return `<section class="slide" data-i="${i}" aria-label="${cityName(c)}">
       <div class="slide-bg" style="background-image:url('${thumb(c)}')"></div>
-      <div class="frame"><img class="frame-thumb" src="${thumb(c)}" alt=""><div class="yt-holder"></div></div>
+      <div class="frame"><img class="frame-thumb" src="${thumb(c)}" alt=""></div>
       <div class="info">
         <h2 class="info-place">${c.flag} ${cityName(c)}</h2>
         <p class="info-spot">${spotName(c)}, ${countryName(c)}</p>
-        <div class="facts"><span class="fact f-time"></span><span class="fact f-weather" hidden></span></div>
-        <a class="source" href="https://www.youtube.com/watch?v=${c.yt}" target="_blank" rel="noopener">${t("source")(c.source)}</a>
+        <div class="facts"><span class="fact f-time"></span><span class="fact f-weather" hidden></span>${silent ? `<span class="fact">${t(camType(c) === "img" ? "imgNote" : "clipNote")}</span>` : ""}</div>
+        <a class="source" href="${sourceLink(c)}" target="_blank" rel="noopener">${t("source")(c.source)}</a>
       </div>
       <div class="actions">
         <button class="act a-fav ${favs.has(c.id) ? "on" : ""}" type="button" aria-pressed="${favs.has(c.id)}"><span class="ic">${ICON.heart}</span>${t("favBtn")}</button>
         <button class="act a-share" type="button"><span class="ic">${ICON.share}</span>${t("share")}</button>
         <button class="act a-random" type="button"><span class="ic">${ICON.dice}</span>${t("random")}</button>
-        <button class="act a-sound" type="button"><span class="ic">${soundOn ? ICON.sound : ICON.mute}</span><span class="lbl">${soundOn ? t("soundOff") : t("soundOn")}</span></button>
+        ${silent ? "" : `<button class="act a-sound" type="button"><span class="ic">${soundOn ? ICON.sound : ICON.mute}</span><span class="lbl">${soundOn ? t("soundOff") : t("soundOn")}</span></button>`}
       </div>
     </section>`;
   }
@@ -275,11 +284,12 @@
     $("#homeBtn").setAttribute("aria-label", t("home"));
     if (push) history.pushState({ seyr: "player" }, "", `?cam=${feedList[start].id}`);
     if (!store.get("seyr.hinted", false)) { const h = $("#hint"); h.textContent = t("hint"); h.hidden = false; }
+    tapSound.textContent = `🔊 ${t("tapSound")}`;
     loadYT();
   }
 
   function closePlayer(fromPop = false) {
-    stopPlayer();
+    stopMedia();
     playerOpen = false; active = -1;
     $("#player").hidden = true; feed.innerHTML = "";
     if (!fromPop && history.state && history.state.seyr === "player") history.back();
@@ -287,9 +297,28 @@
     renderHome();
   }
 
-  function stopPlayer() {
-    if (ytPlayer) { try { ytPlayer.destroy(); } catch {} ytPlayer = null; }
+  let imgTimer = null;
+  function stopMedia() {
+    clearInterval(imgTimer); imgTimer = null;
+    if (ytPlayer && ytPlayer.pauseVideo) { try { ytPlayer.pauseVideo(); } catch {} }
+    stageVid.pause(); stageVid.removeAttribute("src"); stageVid.load();
+    stageImg.removeAttribute("src");
+    stage.dataset.mode = "";
+    stage.classList.add("moving");
+    tapSound.hidden = true; stageDown.hidden = true;
   }
+  const showStage = () => stage.classList.remove("moving");
+
+  // Kaydırma sırasında sahne gizlenir, yeni yer oturunca görünür.
+  let scrollTimer;
+  feed.addEventListener("scroll", () => {
+    stage.classList.add("moving");
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      const idx = Math.round(feed.scrollTop / feed.clientHeight);
+      if (idx === active && stage.dataset.ready === "1") showStage();
+    }, 180);
+  }, { passive: true });
 
   let io;
   function observeSlides() {
@@ -298,7 +327,7 @@
       entries.forEach(en => {
         if (en.isIntersecting && en.intersectionRatio > 0.6) {
           const el = en.target;
-          if (el.dataset.end) { stopPlayer(); active = feedList.length; $("#topTitle").textContent = ""; return; }
+          if (el.dataset.end) { stopMedia(); active = feedList.length; $("#topTitle").textContent = ""; return; }
           activate(+el.dataset.i);
         }
       });
@@ -307,37 +336,97 @@
   }
 
   function slideEl(i) { return feed.querySelector(`.slide[data-i="${i}"]`); }
-  function resetFrame(el) {
-    const f = el.querySelector(".frame");
-    f.querySelectorAll("iframe, .yt-holder").forEach(n => n.remove());
-    const h = document.createElement("div"); h.className = "yt-holder";
-    f.insertBefore(h, f.querySelector(".down"));
-    return h;
-  }
 
   async function activate(i) {
     if (i === active || !feedList[i]) return;
     if (active >= 0 && i !== active && !store.get("seyr.hinted", false)) { store.set("seyr.hinted", true); $("#hint").hidden = true; }
-    stopPlayer();
-    const prev = slideEl(active);
-    if (prev) resetFrame(prev);
+    stopMedia();
+    stage.dataset.ready = "0";
     active = i;
     const c = feedList[i];
     $("#topTitle").textContent = `${c.flag} ${cityName(c)}`;
     if (playerOpen && history.state && history.state.seyr === "player") history.replaceState({ seyr: "player" }, "", `?cam=${c.id}`);
     updateFacts(i);
     loadWeather(i);
+    const type = camType(c);
+    stage.dataset.mode = type;
+    if (type === "img") return playImage(c, i);
+    if (type === "clip") return playClip(c, i);
     await loadYT();
     if (active !== i || !playerOpen) return;
-    const holder = resetFrame(slideEl(i));
-    ytPlayer = new YT.Player(holder, {
-      videoId: c.yt,
-      playerVars: { autoplay: 1, mute: 1, playsinline: 1, rel: 0, modestbranding: 1, controls: 1 },
-      events: {
-        onReady: e => { if (soundOn) e.target.unMute(); e.target.playVideo(); },
-        onError: () => markDown(i),
-      },
-    });
+    playYT(c, i);
+  }
+
+  // --- YouTube: tek oynatıcı, video değiştirilir ---
+  function playYT(c, i) {
+    if (!ytPlayer) {
+      ytPlayer = new YT.Player("ytBox", {
+        videoId: c.yt,
+        playerVars: { autoplay: 1, mute: 1, playsinline: 1, rel: 0, modestbranding: 1, controls: 1 },
+        events: {
+          onReady: () => afterLoad(i),
+          onError: () => markDown(active),
+          onStateChange: e => { if (e.data === 1 && stage.dataset.mode === "yt") { stage.dataset.ready = "1"; showStage(); } },
+        },
+      });
+    } else {
+      try { ytPlayer.loadVideoById(c.yt); } catch {}
+      afterLoad(i);
+    }
+  }
+  function afterLoad(i) {
+    if (active !== i) return;
+    try {
+      if (soundOn) ytPlayer.unMute(); else ytPlayer.mute();
+      ytPlayer.playVideo();
+    } catch {}
+    // Tarayıcı sesli oynatmayı engellediyse: sessiz oynat ve "dokun, ses açılsın" göster.
+    setTimeout(() => {
+      if (active !== i || stage.dataset.mode !== "yt" || !ytPlayer) return;
+      let state = -1, muted = true;
+      try { state = ytPlayer.getPlayerState(); muted = ytPlayer.isMuted(); } catch {}
+      if (state !== 1) { try { ytPlayer.mute(); ytPlayer.playVideo(); } catch {} }
+      tapSound.hidden = !(soundOn && (state !== 1 || muted));
+      stage.dataset.ready = "1"; showStage();
+    }, 1600);
+  }
+  tapSound.addEventListener("click", () => {
+    soundOn = true; store.set("seyr.sound", true);
+    try { ytPlayer.unMute(); ytPlayer.setVolume(100); ytPlayer.playVideo(); } catch {}
+    tapSound.hidden = true; syncSoundButtons();
+  });
+
+  // --- Açık veri: birkaç saniyede bir yenilenen canlı görüntü ---
+  function playImage(c, i) {
+    const load = () => {
+      const url = `${c.img}${c.img.includes("?") ? "&" : "?"}t=${Date.now()}`;
+      const pre = new Image();
+      pre.onload = () => { if (active !== i) return; stageImg.src = url; stage.dataset.ready = "1"; showStage(); };
+      pre.onerror = () => { if (active === i && !stageImg.src) markDown(i); };
+      pre.src = url;
+    };
+    load();
+    imgTimer = setInterval(load, (c.every || 5) * 1000);
+  }
+
+  // --- Açık veri: birkaç dakikada bir yenilenen kısa canlı klip ---
+  function playClip(c, i) {
+    const bucket = Math.floor(Date.now() / 120e3);
+    stageVid.muted = true;
+    stageVid.poster = `${c.img}?t=${bucket}`;
+    stageVid.src = `${c.video}?t=${bucket}`;
+    stageVid.onloadeddata = () => { if (active !== i) return; stage.dataset.ready = "1"; showStage(); };
+    stageVid.onerror = () => { if (active === i) playImage(c, i); };
+    stageVid.play().catch(() => {});
+    imgTimer = setInterval(() => {
+      if (active !== i) return;
+      const b = Math.floor(Date.now() / 120e3);
+      stageVid.src = `${c.video}?t=${b}`; stageVid.play().catch(() => {});
+    }, 120e3);
+  }
+
+  function syncSoundButtons() {
+    feed.querySelectorAll(".a-sound").forEach(b => { b.querySelector(".ic").innerHTML = soundOn ? ICON.sound : ICON.mute; b.querySelector(".lbl").textContent = soundOn ? t("soundOff") : t("soundOn"); });
   }
 
   function updateFacts(i) {
@@ -377,9 +466,7 @@
   function markDown(i) {
     const c = feedList[i]; if (!c) return;
     broken[bkey(c)] = Date.now(); store.set("seyr.broken", broken);
-    const el = slideEl(i); if (!el) return;
-    const d = document.createElement("div"); d.className = "down"; d.textContent = t("down");
-    el.querySelector(".frame").appendChild(d);
+    stageDown.textContent = t("down"); stageDown.hidden = false; showStage();
     setTimeout(() => { if (active === i && playerOpen) goTo(i + 1); }, 1800);
   }
 
@@ -405,9 +492,10 @@
       let j; do { j = Math.floor(Math.random() * feedList.length); } while (j === i);
       feed.scrollTo({ top: j * feed.clientHeight });
     } else if (e.target.closest(".a-sound")) {
-      soundOn = !soundOn;
+      soundOn = !soundOn; store.set("seyr.sound", soundOn);
       if (ytPlayer) { try { soundOn ? ytPlayer.unMute() : ytPlayer.mute(); if (soundOn) ytPlayer.playVideo(); } catch {} }
-      feed.querySelectorAll(".a-sound").forEach(b => { b.querySelector(".ic").innerHTML = soundOn ? ICON.sound : ICON.mute; b.querySelector(".lbl").textContent = soundOn ? t("soundOff") : t("soundOn"); });
+      tapSound.hidden = true;
+      syncSoundButtons();
     }
   });
 
