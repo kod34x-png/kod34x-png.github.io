@@ -1,0 +1,34 @@
+name: Seyr önizleme
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/seyr/onizleme.py"
+      - ".github/workflows/seyr-onizleme.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  onizle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow
+      - name: Aday görüntüleri indir ve tablo yap
+        run: python .github/seyr/onizleme.py
+      - name: onizleme dalına yaz
+        run: |
+          git config user.name "seyr-bekci"
+          git config user.email "seyr-bekci@users.noreply.github.com"
+          mv onizleme /tmp/onizleme
+          git checkout --orphan onizleme
+          git rm -rf -q .
+          cp -r /tmp/onizleme/* .
+          git add -A
+          git commit -q -m "Seyr: aday kamera önizlemeleri"
+          git push -f origin onizleme
