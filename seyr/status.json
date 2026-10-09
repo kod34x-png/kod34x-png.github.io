@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-10-09T23:08:45+00:00",
+ "checkedAt": "2026-10-09T23:11:50+00:00",
  "cams": {
   "new-york": {
    "ok": true,
@@ -56,6 +56,18 @@
    "state": "unknown",
    "title": "🌴 Mambo Beach | Curaçao | LIVE Cam",
    "channel": "https://www.youtube.com/@SHOWMECaribbean"
+  },
+  "meksiko-zocalo": {
+   "ok": false,
+   "yt": "Z7bECtLg40A",
+   "state": "down",
+   "channel": "https://www.youtube.com/@webcamsdemexico"
+  },
+  "cancun": {
+   "ok": false,
+   "yt": "zhRcRgZEoQw",
+   "state": "down",
+   "channel": "https://www.youtube.com/@webcamsdemexico_live"
   },
   "venedik": {
    "ok": false,
@@ -141,6 +153,31 @@
    "yt": "OSnuM2fNovg",
    "state": "down",
    "channel": "https://www.youtube.com/@BusanLive"
+  },
+  "seul-myeongdong": {
+   "ok": false,
+   "yt": "0iElYWnfHZM",
+   "state": "down",
+   "channel": "https://www.youtube.com/@%EA%B0%80%ED%86%A8%EB%A6%AD%EC%9D%B8%ED%84%B0%EB%84%B7%EA%B5%BF%EB%89%B4%EC%8A%A4"
+  },
+  "seul-han": {
+   "ok": false,
+   "yt": "_gmTN6ssF7I",
+   "state": "down",
+   "channel": "https://www.youtube.com/@GiGAeyesLiveTV"
+  },
+  "seul-ddp": {
+   "ok": false,
+   "yt": "GOt7UVVp-5Y",
+   "state": "down",
+   "channel": "https://www.youtube.com/@GiGAeyesLiveTV"
+  },
+  "bangkok": {
+   "ok": true,
+   "yt": "Q71sLS8h9a4",
+   "state": "unknown",
+   "title": "🔴 El Gaucho | Soi 19 | Sukhumvit Road | Bangkok | Thailand | Live Street Webcam | 2160p 4K",
+   "channel": "https://www.youtube.com/@TheRealSamuiWebcam"
   },
   "melbourne": {
    "ok": true,
