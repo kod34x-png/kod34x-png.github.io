@@ -1,0 +1,153 @@
+{
+ "checkedAt": "2026-10-09T23:08:45+00:00",
+ "cams": {
+  "new-york": {
+   "ok": true,
+   "yt": "VGnFLdQW39A",
+   "state": "unknown",
+   "title": "🔴 24/7 NYC Live Cam | Times Square, skyline, streets, more",
+   "channel": "https://www.youtube.com/@fox5ny"
+  },
+  "los-angeles": {
+   "ok": true,
+   "yt": "EO_1LWqsCNE",
+   "state": "unknown",
+   "title": "🔴 Los Angeles Live Cam · Venice Beach · Venice V Hotel · Live Camera Stream",
+   "channel": "https://www.youtube.com/@Teleport.camera"
+  },
+  "san-francisco": {
+   "ok": true,
+   "yt": "G8RIAgPxaMc",
+   "state": "unknown",
+   "title": "San Francisco Live Camera | 24/7 Stream",
+   "channel": "https://www.youtube.com/@abc7news"
+  },
+  "vancouver": {
+   "ok": true,
+   "yt": "rxyNjFKwzJA",
+   "state": "unknown",
+   "title": "🔴🚢 Vancouver LIVE Cam | Cruise Ship LiveStream 24/7 | City Views & Canada Place | Alaska Season 2026",
+   "channel": "https://www.youtube.com/@VancouverCityViews"
+  },
+  "houston": {
+   "ok": true,
+   "yt": "SDK_m1_BVJ4",
+   "state": "unknown",
+   "title": "Houston, Texas | 24/7 Live City Camera",
+   "channel": "https://www.youtube.com/@ABC13Houston"
+  },
+  "hollywood-beach": {
+   "ok": true,
+   "yt": "cmkAbDUEoyA",
+   "state": "unknown",
+   "title": "Live Beach Cam Hollywood Beach Broadwalk, Florida",
+   "channel": "https://www.youtube.com/@HollywoodFLCH78"
+  },
+  "spanish-town": {
+   "ok": true,
+   "yt": "KBnlexbryqE",
+   "state": "unknown",
+   "title": "🟢 Spanish Town Jamaica LIVE 24/7 | St Catherine Street View & Daily Life",
+   "channel": "https://www.youtube.com/@SeeJamaica"
+  },
+  "curacao": {
+   "ok": true,
+   "yt": "loHbMM9JfCs",
+   "state": "unknown",
+   "title": "🌴 Mambo Beach | Curaçao | LIVE Cam",
+   "channel": "https://www.youtube.com/@SHOWMECaribbean"
+  },
+  "venedik": {
+   "ok": false,
+   "yt": "x4AlaibltlA",
+   "state": "down",
+   "channel": null
+  },
+  "venedik-tur": {
+   "ok": true,
+   "yt": "a1mcaV3Sf9U",
+   "state": "unknown",
+   "title": "🔴 LIVE 24/7  Rolling Cam Venice - Live Cam in Venice Italy - Livecam en direct #venice",
+   "channel": "https://www.youtube.com/@iloveyouvenice"
+  },
+  "londra": {
+   "ok": true,
+   "yt": "WKGK_hYnlGE",
+   "state": "unknown",
+   "title": "London walk: London Street Walk 24/7 live stream | London Walking Tour",
+   "channel": "https://www.youtube.com/@ExperiencingLondon"
+  },
+  "yunanistan": {
+   "ok": false,
+   "yt": "5p-s-1453Us",
+   "state": "down",
+   "channel": null
+  },
+  "ispanya": {
+   "ok": true,
+   "yt": "kUfuwa8mDrA",
+   "state": "unknown",
+   "title": "🔴 200 TOP LIVE CAMS from Spain with Music 🎧 and Map | SkylineWebcams",
+   "channel": "https://www.youtube.com/@SkylineWebcams"
+  },
+  "cape-town-masa-dagi": {
+   "ok": true,
+   "yt": "fhUEi-ka6Ks",
+   "state": "unknown",
+   "title": "Vanilla Live Stream Table Mountain - brought to you by vanilla.co.za",
+   "channel": "https://www.youtube.com/@VanillaISP"
+  },
+  "cape-town-sea-point": {
+   "ok": true,
+   "yt": "4Zu64CmAjMo",
+   "state": "unknown",
+   "title": "View of  Sea Point and Lions Head - brought to you by vanilla.co.za",
+   "channel": "https://www.youtube.com/@VanillaISP"
+  },
+  "cape-town-clifton": {
+   "ok": false,
+   "yt": "IGu55JrxyHU",
+   "state": "down",
+   "channel": null
+  },
+  "tokyo-shibuya": {
+   "ok": true,
+   "yt": "d1JuNg7knNo",
+   "state": "unknown",
+   "title": "渋谷センター街 メインアーチ前　ライブ配信",
+   "channel": "https://www.youtube.com/@%E6%B8%8B%E8%B0%B7%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E5%95%86%E5%BA%97%E8%A1%97"
+  },
+  "tokyo-ginza": {
+   "ok": false,
+   "yt": "1Xm5bjdI5hU",
+   "state": "down",
+   "channel": "https://www.youtube.com/@LIVE-hr9eo"
+  },
+  "fuji": {
+   "ok": true,
+   "yt": "Sv9hcJ3k5h4",
+   "state": "unknown",
+   "title": "【4K】富士山ライブカメラ / 4K Live Camera Mt.FUJI　～河口湖～富士山パノラマロープウェイ",
+   "channel": "https://www.youtube.com/@fujiyamanavi"
+  },
+  "seul": {
+   "ok": false,
+   "yt": "3Uf3w-UHB4U",
+   "state": "down",
+   "channel": "https://www.youtube.com/@247SeoulLiveCam"
+  },
+  "busan": {
+   "ok": false,
+   "yt": "OSnuM2fNovg",
+   "state": "down",
+   "channel": "https://www.youtube.com/@BusanLive"
+  },
+  "melbourne": {
+   "ok": true,
+   "yt": "gEbrHdFRgpQ",
+   "state": "unknown",
+   "title": "Melbourne City Life Unfolded: Live 24/7 Street Watch - Bustling Intersection Edition",
+   "channel": "https://www.youtube.com/@CityscapeLive"
+  }
+ }
+}
