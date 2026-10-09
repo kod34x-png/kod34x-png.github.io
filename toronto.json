@@ -1,0 +1,1146 @@
+[
+ {
+  "name": "JARVIS ST FRONT ST E / LOWER JARVIS ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8003.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3712669943727,
+     43.6494610001075
+    ]
+   ]
+  }
+ },
+ {
+  "name": "UNIVERSITY AVE FRONT ST W / YORK ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8004.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3825739992347,
+     43.6451529957272
+    ]
+   ]
+  }
+ },
+ {
+  "name": "FRONT ST W SIMCOE ST / LOWER SIMCOE ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8005.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3848610027037,
+     43.6446850095358
+    ]
+   ]
+  }
+ },
+ {
+  "name": "FRONT ST W JOHN ST / PRIVATE ACCESS",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8006.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3888450031211,
+     43.6438570011493
+    ]
+   ]
+  }
+ },
+ {
+  "name": "SPADINA AVE FRONT ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8007.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3935820060818,
+     43.6427400100944
+    ]
+   ]
+  }
+ },
+ {
+  "name": "BATHURST ST FRONT ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8008.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4013240045522,
+     43.6408870010502
+    ]
+   ]
+  }
+ },
+ {
+  "name": "JARVIS ST KING ST E",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8009.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.371946009712,
+     43.6503339946227
+    ]
+   ]
+  }
+ },
+ {
+  "name": "KING ST E PARLIAMENT ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8010.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3631910065289,
+     43.6529050006026
+    ]
+   ]
+  }
+ },
+ {
+  "name": "BAY ST ADELAIDE ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8013.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3807319914649,
+     43.6500350042574
+    ]
+   ]
+  }
+ },
+ {
+  "name": "UNIVERSITY AVE ADELAIDE ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8014.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.385330003244,
+     43.6489809958318
+    ]
+   ]
+  }
+ },
+ {
+  "name": "BAY ST RICHMOND ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8018.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3814130065462,
+     43.6511680028268
+    ]
+   ]
+  }
+ },
+ {
+  "name": "UNIVERSITY AVE RICHMOND ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8019.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3865059885484,
+     43.6499149985531
+    ]
+   ]
+  }
+ },
+ {
+  "name": "SPADINA AVE RICHMOND ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8020.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3961449982607,
+     43.6477429966399
+    ]
+   ]
+  }
+ },
+ {
+  "name": "UNIVERSITY AVE QUEEN ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8021.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3869500048448,
+     43.6508269972901
+    ]
+   ]
+  }
+ },
+ {
+  "name": "UNIVERSITY AVE QUEEN ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8022.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3862679961158,
+     43.6507850045542
+    ]
+   ]
+  }
+ },
+ {
+  "name": "THE QUEENSWAY KING ST W / RONCESVALLES AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8024.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4458620072651,
+     43.6387200010102
+    ]
+   ]
+  }
+ },
+ {
+  "name": "THE QUEENSWAY KING ST W / RONCESVALLES AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8025.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4461979997267,
+     43.6385540031668
+    ]
+   ]
+  }
+ },
+ {
+  "name": "JARVIS ST DUNDAS ST E",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8031.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3746310010372,
+     43.6569310034762
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST DUNDAS ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8032.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.381032993917,
+     43.656237999307
+    ]
+   ]
+  }
+ },
+ {
+  "name": "UNIVERSITY AVE DUNDAS ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8033.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3879779987806,
+     43.6546940019772
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST COLLEGE ST / CARLTON ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8036.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3832719964188,
+     43.6614319964405
+    ]
+   ]
+  }
+ },
+ {
+  "name": "BAY ST COLLEGE ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8037.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3856920028719,
+     43.6609200061728
+    ]
+   ]
+  }
+ },
+ {
+  "name": "UNIVERSITY AVE COLLEGE ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8038.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3906429994984,
+     43.6596820070307
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST BLOOR ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8042.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3866269973482,
+     43.6703179994192
+    ]
+   ]
+  }
+ },
+ {
+  "name": "BAY ST BLOOR ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8043.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3896430028517,
+     43.6698140049965
+    ]
+   ]
+  }
+ },
+ {
+  "name": "BAY ST BLOOR ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8044.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3896899973845,
+     43.6697550016318
+    ]
+   ]
+  }
+ },
+ {
+  "name": "SPADINA AVE BLOOR ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8046.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4038409932634,
+     43.6665080027107
+    ]
+   ]
+  }
+ },
+ {
+  "name": "EGLINTON AVE YONGE ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8063.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.398213000935,
+     43.7068919955001
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST LORD SEATON W YONGE RAMP",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8103.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4078109962249,
+     43.752454995724
+    ]
+   ]
+  }
+ },
+ {
+  "name": "SHEPPARD AVE YONGE ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8104.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4110470003991,
+     43.7612890079355
+    ]
+   ]
+  }
+ },
+ {
+  "name": "BAY ST QUEEN ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8113.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3816090020626,
+     43.6519740075906
+    ]
+   ]
+  }
+ },
+ {
+  "name": "BAY ST QUEEN ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8114.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.382304995923,
+     43.651957002608
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEENS QUAY W BAY ST / HARBOUR SQ",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8115.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3768619992521,
+     43.641064998551
+    ]
+   ]
+  }
+ },
+ {
+  "name": "DUNDAS ST W THE WEST MALL",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8119.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.5594900029658,
+     43.6281209973391
+    ]
+   ]
+  }
+ },
+ {
+  "name": "DUNDAS ST W KEELE ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8130.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4646509968386,
+     43.6653520055123
+    ]
+   ]
+  }
+ },
+ {
+  "name": "KING ST W JAMESON AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8131.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4358309964034,
+     43.6371379936031
+    ]
+   ]
+  }
+ },
+ {
+  "name": "KING ST W DUFFERIN ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8132.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4271710096162,
+     43.6389119994195
+    ]
+   ]
+  }
+ },
+ {
+  "name": "KING ST W STRACHAN AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8133.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4119000078303,
+     43.6421910016468
+    ]
+   ]
+  }
+ },
+ {
+  "name": "KING ST W STRACHAN AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8134.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4120949972405,
+     43.6419490057919
+    ]
+   ]
+  }
+ },
+ {
+  "name": "KING ST W BATHURST ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8135.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.402860999446,
+     43.6440469982846
+    ]
+   ]
+  }
+ },
+ {
+  "name": "KING ST W BATHURST ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8136.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4029530009815,
+     43.6439290054442
+    ]
+   ]
+  }
+ },
+ {
+  "name": "SPADINA AVE KING ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8137.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.395231003285,
+     43.6453609951093
+    ]
+   ]
+  }
+ },
+ {
+  "name": "SPADINA AVE KING ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8138.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3947659987253,
+     43.6453960063821
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST W LANSDOWNE AVE / JAMESON AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8141.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4373439960441,
+     43.6405150072128
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST W DUFFERIN ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8142.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.428794998704,
+     43.6421420052866
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST W DUFFERIN ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8143.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4286819972819,
+     43.6420979991384
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST W STRACHAN AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8144.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4131499993241,
+     43.6454130088093
+    ]
+   ]
+  }
+ },
+ {
+  "name": "BATHURST ST QUEEN ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8145.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4041109891262,
+     43.647310005401
+    ]
+   ]
+  }
+ },
+ {
+  "name": "SPADINA AVE QUEEN ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8146.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3961950042573,
+     43.6488800043283
+    ]
+   ]
+  }
+ },
+ {
+  "name": "UNIVERSITY AVE KING ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8147.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3849740014843,
+     43.647555002179
+    ]
+   ]
+  }
+ },
+ {
+  "name": "UNIVERSITY AVE KING ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8148.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3848919974713,
+     43.6475249990991
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST YORK MILLS RD / WILSON AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8154.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4064699922825,
+     43.7443310020954
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST ST CLAIR AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8161.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3939359940352,
+     43.6880380004903
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST FINCH AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8162.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.415668002497,
+     43.7795570031574
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST STEELES AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8163.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.420168000608,
+     43.7978530042256
+    ]
+   ]
+  }
+ },
+ {
+  "name": "SPADINA AVE BREMNER BLVD / FORT YORK BLVD",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8164.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3928419894539,
+     43.6407730046315
+    ]
+   ]
+  }
+ },
+ {
+  "name": "SPADINA AVE DUNDAS ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8165.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3977529964177,
+     43.6529310032037
+    ]
+   ]
+  }
+ },
+ {
+  "name": "SPADINA AVE COLLEGE ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8166.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3998939953296,
+     43.6580510041919
+    ]
+   ]
+  }
+ },
+ {
+  "name": "DUNDAS ST W CLOVERDALE MALL / 427 C N DUNDAS RAMP",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8180.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.5547500019616,
+     43.6289439959311
+    ]
+   ]
+  }
+ },
+ {
+  "name": "DUPONT ST SPADINA RD",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8185.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4068669984966,
+     43.674790002261
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST KING ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8199.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3777979961203,
+     43.6492570052918
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST KING ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8200.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3778560100493,
+     43.6492880049747
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST E WOODBINE AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8201.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.305612000479,
+     43.6687259993692
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST E WOODBINE AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8202.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3059089992216,
+     43.6686610013541
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST KINGSTON RD / EASTERN AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8203.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3128269972601,
+     43.66706400923
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST E LESLIE ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8204.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3299989995545,
+     43.6632320088546
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST E BROADVIEW AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8205.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3500040062003,
+     43.6587690048686
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST E BROADVIEW AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8206.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3498740008699,
+     43.658728004101
+    ]
+   ]
+  }
+ },
+ {
+  "name": "DUNDAS ST E JONES AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8209.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3344880076474,
+     43.6662360057122
+    ]
+   ]
+  }
+ },
+ {
+  "name": "BROADVIEW AVE DUNDAS ST E",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8210.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3511489931235,
+     43.6624200063065
+    ]
+   ]
+  }
+ },
+ {
+  "name": "BROADVIEW AVE DUNDAS ST E",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8211.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3513159948418,
+     43.662566009357
+    ]
+   ]
+  }
+ },
+ {
+  "name": "DUNDAS ST E PARLIAMENT ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8212.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.366157998329,
+     43.6594629996268
+    ]
+   ]
+  }
+ },
+ {
+  "name": "DUNDAS ST E PARLIAMENT ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8213.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3660960038927,
+     43.6593190045058
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST BERWICK AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8232.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3976580052819,
+     43.7040269976501
+    ]
+   ]
+  }
+ },
+ {
+  "name": "YONGE ST BROADWAY AVE / MONTGOMERY AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8234.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3990990096539,
+     43.7095019969611
+    ]
+   ]
+  }
+ },
+ {
+  "name": "SPADINA AVE CLARENCE SQ",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8248.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.394172997367,
+     43.6433479983208
+    ]
+   ]
+  }
+ },
+ {
+  "name": "DUNDAS ST W BATHURST ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8253.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4060219932683,
+     43.6523110026444
+    ]
+   ]
+  }
+ },
+ {
+  "name": "DUFFERIN ST DUNDAS ST W",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8254.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4314530031817,
+     43.6496510050056
+    ]
+   ]
+  }
+ },
+ {
+  "name": "DUNDAS ST W COLLEGE ST / ST HELEN'S AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8256.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4410200023925,
+     43.6502809998322
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST W DOVERCOURT RD",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8257.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4223690072574,
+     43.6434819971058
+    ]
+   ]
+  }
+ },
+ {
+  "name": "QUEEN ST W SHAW ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8258.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.4162730002572,
+     43.6447009991392
+    ]
+   ]
+  }
+ },
+ {
+  "name": "FRONT ST W BLUE JAYS WAY",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8264.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3912850050518,
+     43.6434210078596
+    ]
+   ]
+  }
+ },
+ {
+  "name": "DON VALLEY PARKWAY DUNDAS ST E",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc9101.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3547479999587,
+     43.6618990027157
+    ]
+   ]
+  }
+ },
+ {
+  "name": "F G GARDINER XY E SPADINA AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc9205.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3943709985331,
+     43.6381469974869
+    ]
+   ]
+  }
+ },
+ {
+  "name": "F G GARDINER XY W YONGE ST / LAKESHORE W GARDINER",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc9303.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3757669981816,
+     43.6443900009306
+    ]
+   ]
+  }
+ },
+ {
+  "name": "F G GARDINER XY W BAY ST",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc9304.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.377829004338,
+     43.6433340040817
+    ]
+   ]
+  }
+ },
+ {
+  "name": "F G GARDINER XY W SPADINA AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc9307.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3921100025246,
+     43.6389169972833
+    ]
+   ]
+  }
+ },
+ {
+  "name": "GARDINER E SPADINA AV RAMP SPADINA AVE",
+  "img": "https://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc9330.jpg",
+  "geometry": {
+   "type": "MultiPoint",
+   "coordinates": [
+    [
+     -79.3943709985331,
+     43.6381469974869
+    ]
+   ]
+  }
+ }
+]

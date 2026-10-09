@@ -1,0 +1,538 @@
+[
+ {
+  "name": "SEA Westlake Ave N & Highland Dr",
+  "url": "https://www.seattle.gov/trafficcams/images/Westlake_N_Highland.jpg",
+  "coord": [
+   47.6305863732788,
+   -122.343520715635
+  ]
+ },
+ {
+  "name": "SEA Westlake Ave N & Galer St",
+  "url": "https://www.seattle.gov/trafficcams/images/Westlake_N_Galer.jpg",
+  "coord": [
+   47.6305863732788,
+   -122.343520715635
+  ]
+ },
+ {
+  "name": "SEA Westlake Ave N & Ward St",
+  "url": "https://www.seattle.gov/trafficcams/images/Westlake_N_Ward.jpg",
+  "coord": [
+   47.6305863732788,
+   -122.343520715635
+  ]
+ },
+ {
+  "name": "SEA 2nd Ave & Pike St NS",
+  "url": "https://www.seattle.gov/trafficcams/images/2_Pike_NS.jpg",
+  "coord": [
+   47.6087236573733,
+   -122.342892468618
+  ]
+ },
+ {
+  "name": "SEA 2nd Ave & Pike St EW",
+  "url": "https://www.seattle.gov/trafficcams/images/2_Pike_EW.jpg",
+  "coord": [
+   47.6087236573733,
+   -122.342892468618
+  ]
+ },
+ {
+  "name": "SEA 1st Ave & Union St",
+  "url": "https://www.seattle.gov/trafficcams/images/1_Union_NS.jpg",
+  "coord": [
+   47.6087236573733,
+   -122.342892468618
+  ]
+ },
+ {
+  "name": "SEA Alaskan Way & Union St",
+  "url": "https://www.seattle.gov/trafficcams/images/Alaskan_Union.jpg",
+  "coord": [
+   47.6087236573733,
+   -122.342892468618
+  ]
+ },
+ {
+  "name": "SEA Westlake Ave N & Harrison St",
+  "url": "https://www.seattle.gov/trafficcams/images/Westlake_N_Harrison_NS.jpg",
+  "coord": [
+   47.6245497273624,
+   -122.342349600654
+  ]
+ },
+ {
+  "name": "SEA Westlake Ave & Valley St",
+  "url": "https://www.seattle.gov/trafficcams/images/Westlake_Valley.jpg",
+  "coord": [
+   47.6245497273624,
+   -122.342349600654
+  ]
+ },
+ {
+  "name": "SEA Westlake Ave & Denny Way EW",
+  "url": "https://www.seattle.gov/trafficcams/images/Westlake_Denny_EW.jpg",
+  "coord": [
+   47.6185342697586,
+   -122.33848456777
+  ]
+ },
+ {
+  "name": "SEA Westlake Ave & Denny Way NS",
+  "url": "https://www.seattle.gov/trafficcams/images/Westlake_Denny_NS.jpg",
+  "coord": [
+   47.6185342697586,
+   -122.33848456777
+  ]
+ },
+ {
+  "name": "SEA 1st Ave & Yesler Way",
+  "url": "https://www.seattle.gov/trafficcams/images/1_Yesler_EW.jpg",
+  "coord": [
+   47.6038437053681,
+   -122.338244292739
+  ]
+ },
+ {
+  "name": "SEA 1st Ave & Madison St",
+  "url": "https://www.seattle.gov/trafficcams/images/1_Madison_NS.jpg",
+  "coord": [
+   47.6038437053681,
+   -122.338244292739
+  ]
+ },
+ {
+  "name": "SEA Alaskan Way & Yesler Way",
+  "url": "https://www.seattle.gov/trafficcams/images/Alaskan_Yesler_NS.jpg",
+  "coord": [
+   47.6038437053681,
+   -122.338244292739
+  ]
+ },
+ {
+  "name": "SEA 2nd Ave & University St",
+  "url": "https://www.seattle.gov/trafficcams/images/2_University_NS.jpg",
+  "coord": [
+   47.6038437053681,
+   -122.338244292739
+  ]
+ },
+ {
+  "name": "SEA 3rd Ave & University St",
+  "url": "https://www.seattle.gov/trafficcams/images/3_University_NS.jpg",
+  "coord": [
+   47.6038437053681,
+   -122.338244292739
+  ]
+ },
+ {
+  "name": "SEA 3rd Ave & Seneca St",
+  "url": "https://www.seattle.gov/trafficcams/images/3_Seneca_EW.jpg",
+  "coord": [
+   47.6038437053681,
+   -122.338244292739
+  ]
+ },
+ {
+  "name": "SEA 1st Ave & Seneca St",
+  "url": "https://www.seattle.gov/trafficcams/images/1_Seneca.jpg",
+  "coord": [
+   47.6038437053681,
+   -122.338244292739
+  ]
+ },
+ {
+  "name": "SEA Alaskan Way & Madison St",
+  "url": "https://www.seattle.gov/trafficcams/images/Alaskan_Madison_NS.jpg",
+  "coord": [
+   47.6038437053681,
+   -122.338244292739
+  ]
+ },
+ {
+  "name": "SEA 5th Ave & Pike St",
+  "url": "https://www.seattle.gov/trafficcams/images/5_Pike_NS.jpg",
+  "coord": [
+   47.6112073735434,
+   -122.337591981161
+  ]
+ },
+ {
+  "name": "SEA 4th Ave & Pine St",
+  "url": "https://www.seattle.gov/trafficcams/images/4_Pine.jpg",
+  "coord": [
+   47.6112073735434,
+   -122.337591981161
+  ]
+ },
+ {
+  "name": "SEA 3rd Ave & Union St",
+  "url": "https://www.seattle.gov/trafficcams/images/3_Union_SWC.jpg",
+  "coord": [
+   47.6112073735434,
+   -122.337591981161
+  ]
+ },
+ {
+  "name": "SEA 5th Ave & Union St",
+  "url": "https://www.seattle.gov/trafficcams/images/5_Union_EW.jpg",
+  "coord": [
+   47.6112073735434,
+   -122.337591981161
+  ]
+ },
+ {
+  "name": "SEA 7th Ave & Pike St",
+  "url": "https://www.seattle.gov/trafficcams/images/7_Pike_EW.jpg",
+  "coord": [
+   47.6112073735434,
+   -122.337591981161
+  ]
+ },
+ {
+  "name": "SEA 5th Ave & Pine St EW",
+  "url": "https://www.seattle.gov/trafficcams/images/5_Pine_EW.jpg",
+  "coord": [
+   47.6112073735434,
+   -122.337591981161
+  ]
+ },
+ {
+  "name": "SEA 5th Ave & Pine St NS",
+  "url": "https://www.seattle.gov/trafficcams/images/5_Pine_NS.jpg",
+  "coord": [
+   47.6112073735434,
+   -122.337591981161
+  ]
+ },
+ {
+  "name": "SEA 6th Ave & Pine St",
+  "url": "https://www.seattle.gov/trafficcams/images/6_Pine_EW.jpg",
+  "coord": [
+   47.6112073735434,
+   -122.337591981161
+  ]
+ },
+ {
+  "name": "SEA Alaskan Way S & S Jackson St",
+  "url": "https://www.seattle.gov/trafficcams/images/Alaskan_S_Jackson.jpg",
+  "coord": [
+   47.5992092624218,
+   -122.335906697763
+  ]
+ },
+ {
+  "name": "SEA 2nd Ave S & S Jackson St",
+  "url": "https://www.seattle.gov/trafficcams/images/2_S_Jackson.jpg",
+  "coord": [
+   47.5992092624218,
+   -122.335906697763
+  ]
+ },
+ {
+  "name": "SEA 1st Ave S & Jackson St",
+  "url": "https://www.seattle.gov/trafficcams/images/1_S_Jackson.jpg",
+  "coord": [
+   47.5992092624218,
+   -122.335906697763
+  ]
+ },
+ {
+  "name": "SEA 2nd Ave & Yesler Way",
+  "url": "https://www.seattle.gov/trafficcams/images/2_Yesler.jpg",
+  "coord": [
+   47.5992092624218,
+   -122.335906697763
+  ]
+ },
+ {
+  "name": "SEA 3rd Ave & Yesler Way",
+  "url": "https://www.seattle.gov/trafficcams/images/3_Yesler_NS.jpg",
+  "coord": [
+   47.606087858217,
+   -122.332909103454
+  ]
+ },
+ {
+  "name": "SEA 4th Ave & Madison St",
+  "url": "https://www.seattle.gov/trafficcams/images/4_Madison.jpg",
+  "coord": [
+   47.606087858217,
+   -122.332909103454
+  ]
+ },
+ {
+  "name": "SEA 5th Ave & Madison St EW",
+  "url": "https://www.seattle.gov/trafficcams/images/5_Madison_EW.jpg",
+  "coord": [
+   47.606087858217,
+   -122.332909103454
+  ]
+ },
+ {
+  "name": "SEA 6th Ave & Seneca St",
+  "url": "https://www.seattle.gov/trafficcams/images/6_Seneca_NS.jpg",
+  "coord": [
+   47.606087858217,
+   -122.332909103454
+  ]
+ },
+ {
+  "name": "SEA 5th Ave & Madison St NS",
+  "url": "https://www.seattle.gov/trafficcams/images/5_Madison_NS.jpg",
+  "coord": [
+   47.606087858217,
+   -122.332909103454
+  ]
+ },
+ {
+  "name": "SEA Madison St & 7th Ave",
+  "url": "https://www.seattle.gov/trafficcams/images/SDOT_Portable_3.jpg",
+  "coord": [
+   47.606087858217,
+   -122.332909103454
+  ]
+ },
+ {
+  "name": "SEA 8th Ave & Madison St",
+  "url": "https://www.seattle.gov/trafficcams/images/8_Madison.jpg",
+  "coord": [
+   47.606087858217,
+   -122.332909103454
+  ]
+ },
+ {
+  "name": "SEA Boren Ave & Pike St",
+  "url": "https://www.seattle.gov/trafficcams/images/Boren_Pike_EW.jpg",
+  "coord": [
+   47.6120797745892,
+   -122.3322650982
+  ]
+ },
+ {
+  "name": "SEA 9th Ave & Pine St",
+  "url": "https://www.seattle.gov/trafficcams/images/9_Pine_EW.jpg",
+  "coord": [
+   47.6120797745892,
+   -122.3322650982
+  ]
+ },
+ {
+  "name": "SEA 8th Ave & Pike St",
+  "url": "https://www.seattle.gov/trafficcams/images/8_Pike_NWC.jpg",
+  "coord": [
+   47.6120797745892,
+   -122.3322650982
+  ]
+ },
+ {
+  "name": "SEA 4th Ave S & S Jackson St",
+  "url": "https://www.seattle.gov/trafficcams/images/4_S_Jackson.jpg",
+  "coord": [
+   47.5999913152798,
+   -122.330342446612
+  ]
+ },
+ {
+  "name": "SEA 5th Ave S & S Jackson St",
+  "url": "https://www.seattle.gov/trafficcams/images/5_S_Jackson.jpg",
+  "coord": [
+   47.5999913152798,
+   -122.330342446612
+  ]
+ },
+ {
+  "name": "SEA Boren Ave & Madison St NS",
+  "url": "https://www.seattle.gov/trafficcams/images/Boren_Madison_NS.jpg",
+  "coord": [
+   47.6052967192,
+   -122.327749992498
+  ]
+ },
+ {
+  "name": "SEA Boren Ave & Madison St EW",
+  "url": "https://www.seattle.gov/trafficcams/images/Boren_Madison_EW.jpg",
+  "coord": [
+   47.6052967192,
+   -122.327749992498
+  ]
+ },
+ {
+  "name": "SEA Boren Ave & Seneca St",
+  "url": "https://www.seattle.gov/trafficcams/images/Boren_Seneca_NS.jpg",
+  "coord": [
+   47.6107654358673,
+   -122.326444271777
+  ]
+ },
+ {
+  "name": "SEA S Jackson St & Maynard Ave S",
+  "url": "https://www.seattle.gov/trafficcams/images/Maynard_S_Jackson_EW.jpg",
+  "coord": [
+   47.5991907580923,
+   -122.325055208023
+  ]
+ },
+ {
+  "name": "SEA Broadway & E Pike St EW",
+  "url": "https://www.seattle.gov/trafficcams/images/Broadway_E_Pike_EW.jpg",
+  "coord": [
+   47.6111536219956,
+   -122.320806066186
+  ]
+ },
+ {
+  "name": "SEA 12th Ave & E Madison St NS",
+  "url": "https://www.seattle.gov/trafficcams/images/12_E_Madison_2.jpg",
+  "coord": [
+   47.6111536219956,
+   -122.320806066186
+  ]
+ },
+ {
+  "name": "SEA 12th Ave & E Madison St EW",
+  "url": "https://www.seattle.gov/trafficcams/images/12_E_Madison_1.jpg",
+  "coord": [
+   47.6111536219956,
+   -122.320806066186
+  ]
+ },
+ {
+  "name": "SEA Broadway & E Pike St NS",
+  "url": "https://www.seattle.gov/trafficcams/images/Broadway_E_Pike_NS.jpg",
+  "coord": [
+   47.6111536219956,
+   -122.320806066186
+  ]
+ },
+ {
+  "name": "SEA Broadway & Madison St EW",
+  "url": "https://www.seattle.gov/trafficcams/images/Broadway_E_Madison_EW.jpg",
+  "coord": [
+   47.6111536219956,
+   -122.320806066186
+  ]
+ },
+ {
+  "name": "SEA Broadway & Madison St NS",
+  "url": "https://www.seattle.gov/trafficcams/images/Broadway_E_Madison_NS.jpg",
+  "coord": [
+   47.6111536219956,
+   -122.320806066186
+  ]
+ },
+ {
+  "name": "SEA Boren Ave & Yesler Way",
+  "url": "https://www.seattle.gov/trafficcams/images/Boren_Yesler_NWC.jpg",
+  "coord": [
+   47.6017022051659,
+   -122.317823159831
+  ]
+ },
+ {
+  "name": "SEA 14th Ave S & S Jackson St",
+  "url": "https://www.seattle.gov/trafficcams/images/14_S_Jackson.jpg",
+  "coord": [
+   47.6017022051659,
+   -122.317823159831
+  ]
+ },
+ {
+  "name": "SEA 12th Ave S & S Jackson St",
+  "url": "https://www.seattle.gov/trafficcams/images/12_S_Jackson.jpg",
+  "coord": [
+   47.6017022051659,
+   -122.317823159831
+  ]
+ },
+ {
+  "name": "SEA University Way NE & NE 43rd St SEC",
+  "url": "https://www.seattle.gov/trafficcams/images/University_NE_43_SEC.jpg",
+  "coord": [
+   47.6613868457585,
+   -122.317690834128
+  ]
+ },
+ {
+  "name": "SEA 19th Ave & E Madison St",
+  "url": "https://www.seattle.gov/trafficcams/images/19_E_Madison.jpg",
+  "coord": [
+   47.6150445597966,
+   -122.311459488251
+  ]
+ },
+ {
+  "name": "SEA 16th Ave E & E Madison St",
+  "url": "https://www.seattle.gov/trafficcams/images/16_E_Madison.jpg",
+  "coord": [
+   47.6150445597966,
+   -122.311459488251
+  ]
+ },
+ {
+  "name": "SEA 23rd Ave E & E Madison St NS",
+  "url": "https://www.seattle.gov/trafficcams/images/23_E_Madison_NS.jpg",
+  "coord": [
+   47.6184201499922,
+   -122.303650196027
+  ]
+ },
+ {
+  "name": "SEA 23rd Ave E & E Madison St EW",
+  "url": "https://www.seattle.gov/trafficcams/images/23_E_Madison_EW.jpg",
+  "coord": [
+   47.6184201499922,
+   -122.303650196027
+  ]
+ },
+ {
+  "name": "SEA 23rd Ave & E Union St NS",
+  "url": "https://www.seattle.gov/trafficcams/images/23_Union.jpg",
+  "coord": [
+   47.6129414136427,
+   -122.302710373442
+  ]
+ },
+ {
+  "name": "SEA MLK Jr Way S & S Jackson St",
+  "url": "https://www.seattle.gov/trafficcams/images/MLK_S_Jackson_NS.jpg",
+  "coord": [
+   47.5995592091369,
+   -122.302234233208
+  ]
+ },
+ {
+  "name": "SEA 23rd Ave S & S Jackson St",
+  "url": "https://www.seattle.gov/trafficcams/images/23_S_Jackson_EW.jpg",
+  "coord": [
+   47.5995592091369,
+   -122.302234233208
+  ]
+ },
+ {
+  "name": "SEA 23rd Ave S & S Jackson St NS",
+  "url": "https://www.seattle.gov/trafficcams/images/23_S_Jackson_NS.jpg",
+  "coord": [
+   47.5995592091369,
+   -122.302234233208
+  ]
+ },
+ {
+  "name": "SEA MLK Jr Way & E Yesler Way",
+  "url": "https://www.seattle.gov/trafficcams/images/MLK_E_Yesler_NS.jpg",
+  "coord": [
+   47.6016561533033,
+   -122.296767841218
+  ]
+ },
+ {
+  "name": "SEA MLK Jr Way E & E Madison St",
+  "url": "https://www.seattle.gov/trafficcams/images/MLK_E_Madison.jpg",
+  "coord": [
+   47.6233125726605,
+   -122.296426108524
+  ]
+ }
+]
