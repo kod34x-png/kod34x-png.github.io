@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-10-09T23:34:19+00:00",
+ "checkedAt": "2026-10-09T23:46:32+00:00",
  "cams": {
   "new-york": {
    "ok": true,
@@ -185,6 +185,141 @@
    "state": "unknown",
    "title": "Melbourne City Life Unfolded: Live 24/7 Street Watch - Bustling Intersection Edition",
    "channel": "https://www.youtube.com/@CityscapeLive"
+  },
+  "londra-trafalgar": {
+   "ok": true,
+   "state": "img",
+   "why": "video 200"
+  },
+  "londra-piccadilly": {
+   "ok": true,
+   "state": "img",
+   "why": "video 200"
+  },
+  "londra-parlamento": {
+   "ok": true,
+   "state": "img",
+   "why": "video 200"
+  },
+  "londra-oxford": {
+   "ok": true,
+   "state": "img",
+   "why": "video 200"
+  },
+  "londra-regent": {
+   "ok": true,
+   "state": "img",
+   "why": "video 200"
+  },
+  "londra-camden": {
+   "ok": true,
+   "state": "img",
+   "why": "video 200"
+  },
+  "londra-westminster": {
+   "ok": true,
+   "state": "img",
+   "why": "video 200"
+  },
+  "ny-times-45": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "ny-broadway-42": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "ny-times-46n": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "ny-times-46e": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "madrid-granvia-clavel": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "madrid-callao": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "madrid-canalejas": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "madrid-alcala": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "madrid-granvia-alcala": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "madrid-cibeles": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "madrid-espana": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "hk-causeway-bay": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "hk-wan-chai": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "hk-nathan": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "hk-tsim-sha-tsui": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "hk-central": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "seattle-pike": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "seattle-pioneer": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "toronto-bay": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
+  },
+  "toronto-spadina": {
+   "ok": true,
+   "state": "img",
+   "why": "ok"
   }
  }
 }
