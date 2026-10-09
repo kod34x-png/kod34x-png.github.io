@@ -27,7 +27,7 @@
       copied: "Link kopyalandı", added: "Favorilere eklendi", removed: "Favorilerden çıkarıldı",
       source: s => `Yayın: ${s}`, shareText: c => `Şu an ${c} canlı, Seyr'de izliyorum:`,
       langBtn: "EN", back: "Geri", home: "Haritaya dön",
-      tapSound: "Sesi açmak için dokun", imgNote: "Birkaç saniyede bir yenilenir", clipNote: "Kısa canlı klip, sessiz",
+      tapSound: "Sesi açmak için dokun", imgNote: "Birkaç saniyede bir yenilenir", imgNoteSlow: "Dakikada bir yenilenen canlı görüntü", clipNote: "Kısa canlı klip, sessiz",
     },
     en: {
       live: n => `${n} places live right now`,
@@ -44,7 +44,7 @@
       copied: "Link copied", added: "Added to favourites", removed: "Removed from favourites",
       source: s => `Stream: ${s}`, shareText: c => `${c} is live right now, watching on Seyr:`,
       langBtn: "TR", back: "Back", home: "Back to map",
-      tapSound: "Tap to turn sound on", imgNote: "Refreshes every few seconds", clipNote: "Short live clip, no sound",
+      tapSound: "Tap to turn sound on", imgNote: "Refreshes every few seconds", imgNoteSlow: "Live still, refreshed every minute", clipNote: "Short live clip, no sound",
     },
   };
   let lang = store.get("seyr.lang", (navigator.language || "tr").toLowerCase().startsWith("tr") ? "tr" : "en");
@@ -250,7 +250,7 @@
       <div class="info">
         <h2 class="info-place">${c.flag} ${cityName(c)}</h2>
         <p class="info-spot">${spotName(c)}, ${countryName(c)}</p>
-        <div class="facts"><span class="fact f-time"></span><span class="fact f-weather" hidden></span>${silent ? `<span class="fact">${t(camType(c) === "img" ? "imgNote" : "clipNote")}</span>` : ""}</div>
+        <div class="facts"><span class="fact f-time"></span><span class="fact f-weather" hidden></span>${silent ? `<span class="fact">${t(camType(c) === "img" ? ((c.every || 5) <= 10 ? "imgNote" : "imgNoteSlow") : "clipNote")}</span>` : ""}</div>
         <a class="source" href="${sourceLink(c)}" target="_blank" rel="noopener">${t("source")(c.source)}</a>
       </div>
       <div class="actions">
