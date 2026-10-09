@@ -1,5 +1,5 @@
 // Seyr — uygulama kabuğunu önbellekte tutar; canlı yayınlar her zaman internetten gelir.
-const CACHE = "seyr-v5";
+const CACHE = "seyr-v6";
 const SHELL = ["./", "index.html", "style.css", "app.js", "cams.js", "manifest.webmanifest", "icons/icon-192.png", "lib/leaflet/leaflet.js", "lib/leaflet/leaflet.css", "lib/land.json"];
 
 self.addEventListener("install", e => {

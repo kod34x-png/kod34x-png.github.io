@@ -132,7 +132,7 @@
     $("#strip").innerHTML = list.map((c, i) => {
       const s = sunState(c, sun);
       return `<button class="card" data-i="${i}" type="button">
-        <div class="card-img"><img src="${thumb(c)}" alt="" loading="lazy"><span class="card-sun ${sunClass(s)}"></span>${favs.has(c.id) ? '<span class="card-fav">❤️</span>' : ""}</div>
+        <div class="card-img"><img src="${thumb(c)}" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="card-sun ${sunClass(s)}"></span>${favs.has(c.id) ? '<span class="card-fav">❤️</span>' : ""}</div>
         <div class="card-city">${c.flag} ${cityName(c)}</div>
         <div class="card-time">${localTime(c)} · ${t(s)}</div>
       </button>`;
@@ -246,7 +246,7 @@
     const silent = camType(c) !== "yt";
     return `<section class="slide" data-i="${i}" aria-label="${cityName(c)}">
       <div class="slide-bg" style="background-image:url('${thumb(c)}')"></div>
-      <div class="frame"><img class="frame-thumb" src="${thumb(c)}" alt=""></div>
+      <div class="frame"><img class="frame-thumb" src="${thumb(c)}" alt="" referrerpolicy="no-referrer"></div>
       <div class="info">
         <h2 class="info-place">${c.flag} ${cityName(c)}</h2>
         <p class="info-spot">${spotName(c)}, ${countryName(c)}</p>
@@ -397,16 +397,26 @@
   });
 
   // --- Açık veri: birkaç saniyede bir yenilenen canlı görüntü ---
+  // Önce zaman damgalı adres denenir (önbelleği aşmak için); sunucu reddederse düz adres.
+  // 10 saniyede hiç görüntü gelmezse yayın kapalı sayılır.
   function playImage(c, i) {
+    let plain = false, shown = false;
+    const urlFor = () => (plain ? c.img : `${c.img}${c.img.includes("?") ? "&" : "?"}t=${Date.now()}`);
     const load = () => {
-      const url = `${c.img}${c.img.includes("?") ? "&" : "?"}t=${Date.now()}`;
+      const url = urlFor();
       const pre = new Image();
-      pre.onload = () => { if (active !== i) return; stageImg.src = url; stage.dataset.ready = "1"; showStage(); };
-      pre.onerror = () => { if (active === i && !stageImg.src) markDown(i); };
+      pre.referrerPolicy = "no-referrer";
+      pre.onload = () => {
+        if (active !== i || pre.naturalWidth < 50) return;
+        stageImg.src = url; shown = true; stage.dataset.ready = "1"; showStage();
+      };
+      pre.onerror = () => { if (active === i && !plain) { plain = true; load(); } };
       pre.src = url;
     };
+    stageImg.referrerPolicy = "no-referrer";
     load();
     imgTimer = setInterval(load, (c.every || 5) * 1000);
+    setTimeout(() => { if (active === i && !shown) markDown(i); }, 10000);
   }
 
   // --- Açık veri: birkaç dakikada bir yenilenen kısa canlı klip ---
