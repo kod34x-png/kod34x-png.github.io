@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-10-09T23:18:53+00:00",
+ "checkedAt": "2026-10-09T23:21:15+00:00",
  "cams": {
   "new-york": {
    "ok": true,
@@ -58,15 +58,17 @@
    "channel": "https://www.youtube.com/@SHOWMECaribbean"
   },
   "meksiko-zocalo": {
-   "ok": false,
+   "ok": true,
    "yt": "Z7bECtLg40A",
-   "state": "down",
+   "state": "unknown",
+   "title": "⛈️ #CDMX | Zócalo repleto ¿Se vendrá la lluvia? Zócalo #EnVivo",
    "channel": "https://www.youtube.com/@webcamsdemexico"
   },
   "cancun": {
-   "ok": false,
+   "ok": true,
    "yt": "zhRcRgZEoQw",
-   "state": "down",
+   "state": "unknown",
+   "title": "Vista en vivo de Playa Hotel Presidente, Cancún",
    "channel": "https://www.youtube.com/@webcamsdemexico_live"
   },
   "venedik": {
@@ -130,9 +132,10 @@
    "channel": "https://www.youtube.com/@%E6%B8%8B%E8%B0%B7%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E5%95%86%E5%BA%97%E8%A1%97"
   },
   "tokyo-ginza": {
-   "ok": false,
+   "ok": true,
    "yt": "1Xm5bjdI5hU",
-   "state": "down",
+   "state": "unknown",
+   "title": "【LIVE】銀座ライブカメラ　数寄屋橋スクランブル交差点 Sukiyabashi crossing in Ginza, Tokyo 스키야바시 긴자",
    "channel": "https://www.youtube.com/@LIVE-hr9eo"
   },
   "fuji": {
@@ -143,33 +146,38 @@
    "channel": "https://www.youtube.com/@fujiyamanavi"
   },
   "seul": {
-   "ok": false,
+   "ok": true,
    "yt": "3Uf3w-UHB4U",
-   "state": "down",
+   "state": "unknown",
+   "title": "🛑남산 음악 방송 한강 수영장 보트 자전거 올림픽대로  Music Box Seoul N TOWER Han River Boat Hannam Bridge UN Village LoFi",
    "channel": "https://www.youtube.com/@247SeoulLiveCam"
   },
   "busan": {
-   "ok": false,
+   "ok": true,
    "yt": "OSnuM2fNovg",
-   "state": "down",
+   "state": "unknown",
+   "title": "[Live] 부산 라이브캠 4K 생중계 🔴 광안리 라이브 광안대교 실시간 방송  Busan Live Cam Korea",
    "channel": "https://www.youtube.com/@BusanLive"
   },
   "seul-myeongdong": {
-   "ok": false,
+   "ok": true,
    "yt": "0iElYWnfHZM",
-   "state": "down",
+   "state": "unknown",
+   "title": "명동대성당 Myeongdong Catholic Cathedral",
    "channel": "https://www.youtube.com/@%EA%B0%80%ED%86%A8%EB%A6%AD%EC%9D%B8%ED%84%B0%EB%84%B7%EA%B5%BF%EB%89%B4%EC%8A%A4"
   },
   "seul-han": {
-   "ok": false,
+   "ok": true,
    "yt": "_gmTN6ssF7I",
-   "state": "down",
+   "state": "unknown",
+   "title": "서울실시간 한강라이브 서강대교 Live Cam I \"SeogangBridge\",Seoul,Korea I SeoulHanGangLive ソウル漢江ライブ 首尔汉江现场演出 한강라이브",
    "channel": "https://www.youtube.com/@GiGAeyesLiveTV"
   },
   "seul-ddp": {
-   "ok": false,
+   "ok": true,
    "yt": "GOt7UVVp-5Y",
-   "state": "down",
+   "state": "unknown",
+   "title": "서울실시간 DDP라이브 Live Cam I \"Dongdaemun design Plaza\", Seoul, Korea I 동대문디자인플라자 동대문사입 서울여행명소 동대문가볼만한곳",
    "channel": "https://www.youtube.com/@GiGAeyesLiveTV"
   },
   "bangkok": {
