@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>West Group İnşaat · Kat Karşılığı Konut Projeleri · Ankara</title>
+<meta name="description" content="12 yıllık tecrübe: kamu projeleri, yap-sat ve kentsel dönüşüm. Arsanızı kat karşılığı değerlendirmek için West Group İnşaat ile görüşün. Yenimahalle / Ankara.">
+<meta name="theme-color" content="#0b0a09">
+<meta property="og:title" content="West Group İnşaat">
+<meta property="og:description" content="Arsanız, imzamızla değer kazanır. Kat karşılığı konut projeleri · Ankara">
+<meta property="og:image" content="img/keklik-1.webp">
+<link rel="icon" href="img/icon.png">
+<link rel="apple-touch-icon" href="img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0a09; --bg2:#13110f; --line:#2a251f; --ink:#efe8dd; --mute:#a59c8f;
+  --gold:#b48a55; --gold2:#d9b98a; --cream:#f4efe7; --dark:#1a1612;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(34px,5vw,54px);margin:14px 0 18px}
+.lead{color:var(--mute);max-width:620px;font-size:17px}
+section{padding:96px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:2px;font-weight:600;font-size:15px;transition:.2s;border:1px solid var(--gold);cursor:pointer;font-family:var(--sans)}
+.btn-gold{background:var(--gold);color:#120e0a}
+.btn-gold:hover{background:var(--gold2);border-color:var(--gold2)}
+.btn-line{color:var(--ink)}
+.btn-line:hover{background:rgba(180,138,85,.12)}
+.btn svg{width:18px;height:18px}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s;padding:14px 0}
+header.solid{background:rgba(11,10,9,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:8px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:46px;width:auto}
+.brand b{font-family:var(--sans);font-weight:700;letter-spacing:.16em;font-size:15px;color:var(--gold2);display:block;line-height:1.2}
+.brand small{display:block;letter-spacing:.42em;font-size:10px;color:var(--gold);font-weight:600}
+.menu{display:flex;gap:28px;font-size:14px;color:var(--mute)}
+.menu a:hover{color:var(--ink)}
+.nav .btn{padding:10px 16px;font-size:14px}
+@media(max-width:900px){.menu{display:none}}
+@media(max-width:480px){.nav .btn span{display:none}.brand img{height:40px}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:140px 0 72px;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.04);animation:slow 18s ease-out forwards}
+@keyframes slow{to{transform:scale(1)}}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,9,.55) 0%,rgba(11,10,9,.25) 35%,rgba(11,10,9,.88) 78%,var(--bg) 100%)}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(46px,8.4vw,104px);max-width:900px;margin:18px 0 22px}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero p{max-width:560px;color:#d5ccbf;font-size:18px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+@media(max-width:700px){.tag{display:none}}
+.tag{position:absolute;right:20px;bottom:24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* stats */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:0;background:var(--bg2)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:34px 20px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{font-family:var(--serif);font-size:54px;font-weight:600;color:var(--gold2);line-height:1;display:block}
+.stat span{font-size:14px;color:var(--mute);display:block;margin-top:8px}
+@media(max-width:760px){.stats .wrap{grid-template-columns:1fr 1fr;padding:0}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.stat b{font-size:44px}}
+
+/* about */
+.about .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.about .pic{position:relative}
+.about .pic img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.about .pic .badge{position:absolute;left:-18px;bottom:28px;background:var(--gold);color:#120e0a;padding:18px 22px;font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.1}
+.about .pic .badge small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-top:4px}
+.timeline{margin-top:30px;border-left:1px solid var(--line)}
+.timeline>div{padding:0 0 22px 24px;position:relative}
+.timeline>div:before{content:"";position:absolute;left:-5px;top:8px;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.timeline b{display:block;font-size:15px}
+.timeline span{color:var(--mute);font-size:15px}
+.kurum{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.kurum i{font-style:normal;font-size:13px;border:1px solid var(--line);padding:5px 10px;color:var(--ink)}
+@media(max-width:900px){.about .grid{grid-template-columns:1fr;gap:44px}.about .pic .badge{left:0}}
+
+/* process */
+.process{background:var(--cream);color:var(--dark)}
+.process .lead{color:#5d544a}
+.process .eyebrow{color:#8a6533}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:52px;border-top:1px solid #d9cfbf}
+.step{padding:28px 22px 10px 0;position:relative}
+.step .n{font-family:var(--serif);font-size:58px;color:#c9a46f;line-height:1;font-weight:600}
+.step h3{font-size:25px;margin:12px 0 10px}
+.step p{font-size:15px;color:#5d544a}
+@media(max-width:980px){.steps{grid-template-columns:1fr 1fr;gap:0 28px}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}.step{border-bottom:1px solid #d9cfbf;padding:24px 0;display:grid;grid-template-columns:62px 1fr;column-gap:14px}.step .n{grid-row:span 2;font-size:48px}.step h3{margin:4px 0 6px}}
+
+/* projects */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.filters button{background:none;border:1px solid var(--line);color:var(--mute);padding:9px 16px;font:600 13px var(--sans);cursor:pointer;letter-spacing:.04em}
+.filters button.on{border-color:var(--gold);color:var(--gold2)}
+.proj{display:grid;grid-template-columns:1.4fr 1fr;gap:0;margin-top:40px;border:1px solid var(--line);background:var(--bg2)}
+.proj+.proj{margin-top:28px}
+.proj .cover{position:relative;cursor:zoom-in;overflow:hidden;min-height:340px}
+.proj .cover img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.proj .cover:hover img{transform:scale(1.03)}
+.chip{position:absolute;top:14px;left:14px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:6px 10px;background:rgba(11,10,9,.78);color:var(--gold2);backdrop-filter:blur(4px)}
+.chip.real{background:var(--gold);color:#120e0a}
+.proj .info{padding:36px 34px;display:flex;flex-direction:column}
+.proj .info h3{font-size:36px;margin:10px 0 8px}
+.proj .info .loc{color:var(--mute);font-size:15px}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin:24px 0;border:1px solid var(--line)}
+.spec div{background:var(--bg2);padding:14px 16px}
+.spec small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.spec b{font-size:17px;font-weight:600}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:auto}
+.thumbs button{border:0;padding:0;cursor:zoom-in;aspect-ratio:1;overflow:hidden;background:#000;position:relative}
+.thumbs img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:.3s}
+.thumbs button:hover img{opacity:1}
+.thumbs .more{position:absolute;inset:0;display:grid;place-items:center;background:rgba(11,10,9,.65);color:var(--gold2);font-weight:700;font-size:15px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--gold2)}
+.status:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold2);box-shadow:0 0 0 4px rgba(217,185,138,.18)}
+@media(max-width:900px){.proj{grid-template-columns:1fr}.proj .cover{min-height:0;aspect-ratio:16/10}.proj .info{padding:26px 20px}}
+.note{font-size:13px;color:var(--mute);margin-top:18px}
+
+/* material */
+.mat .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.card{position:relative;overflow:hidden;background:#000;aspect-ratio:3/4;cursor:zoom-in}
+.card img{width:100%;height:100%;object-fit:cover;opacity:.78;transition:.6s}
+.card:hover img{opacity:.95;transform:scale(1.03)}
+.card div{position:absolute;inset:auto 0 0 0;padding:22px 18px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.card h3{font-size:26px}
+.card p{font-size:14px;color:#d1c8bb}
+.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border:1px solid var(--line)}
+.promise div{padding:26px 24px;border-right:1px solid var(--line)}
+.promise div:last-child{border-right:0}
+.promise b{display:block;font-family:var(--serif);font-size:24px;color:var(--gold2);margin-bottom:6px;font-weight:600}
+.promise span{font-size:15px;color:var(--mute)}
+@media(max-width:900px){.mat .grid{grid-template-columns:1fr 1fr}.promise{grid-template-columns:1fr}.promise div{border-right:0;border-bottom:1px solid var(--line)}.promise div:last-child{border-bottom:0}}
+
+/* form */
+.contact{background:var(--bg2);border-top:1px solid var(--line)}
+.contact .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form .full{grid-column:1/-1}
+label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600;display:block;margin-bottom:6px}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--ink);padding:14px;font:16px var(--sans);border-radius:2px;outline:none;transition:.2s}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+textarea{min-height:96px;resize:vertical}
+form .btn{justify-content:center;width:100%}
+.direct{margin-top:30px;display:grid;gap:12px}
+.direct a{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);transition:.2s}
+.direct a:hover{border-color:var(--gold)}
+.direct svg{width:22px;height:22px;color:var(--gold2);flex:none}
+.direct small{display:block;font-size:12px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase}
+.direct b{font-weight:600}
+@media(max-width:900px){.contact .grid{grid-template-columns:1fr;gap:44px}}
+@media(max-width:520px){form{grid-template-columns:1fr}}
+
+footer{padding:36px 0 110px;border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.wa-float svg{width:30px;height:30px;color:#fff}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(5,4,3,.96);display:none;align-items:center;justify-content:center}
+.lb.on{display:flex}
+.lb img{max-width:94vw;max-height:84svh;object-fit:contain}
+.lb .cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:13px;color:var(--mute)}
+.lb button{position:absolute;background:none;border:0;color:var(--ink);font-size:34px;cursor:pointer;padding:16px;line-height:1}
+.lb .x{top:6px;right:8px}
+.lb .p{left:4px;top:50%;transform:translateY(-50%)}
+.lb .nx{right:4px;top:50%;transform:translateY(-50%)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero-bg img{animation:none}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="West Group İnşaat">
+      <img src="img/emblem.png" alt="">
+      <span><b>WEST GROUP</b><small>İNŞAAT</small></span>
+    </a>
+    <nav class="menu">
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#surec">Kat Karşılığı</a>
+      <a href="#projeler">Projeler</a>
+      <a href="#malzeme">Malzeme</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+    <a class="btn btn-gold" href="#iletisim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg><span>Arsanızı Değerlendirelim</span></a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg"><img src="img/keklik-1.webp" alt="West Group İnşaat Keklik Pınarı projesi dış cephe görseli" fetchpriority="high"></div>
+  <div class="wrap">
+    <div class="eyebrow">Kat karşılığı · Kentsel dönüşüm · Ankara</div>
+    <h1>Arsanız, <em>imzamızla</em> değer kazanır.</h1>
+    <p>12 yıldır kamu projelerinden kentsel dönüşüme kadar binalar yapıyoruz. Arsa sahiplerine verdiğimiz sözü yazıya döker, yazdığımızı inşa ederiz.</p>
+    <div class="cta">
+      <a class="btn btn-gold" href="#iletisim">Arsanızı Değerlendirelim</a>
+      <a class="btn btn-line" href="#projeler">Projelerimizi Görün</a>
+    </div>
+  </div>
+  <span class="tag">Keklik Pınarı · Proje görseli</span>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stat"><b data-count="12">12</b><span>yıllık sektör tecrübesi</span></div>
+    <div class="stat"><b data-count="35">35</b><span>bağımsız bölüm devam eden projelerde</span></div>
+    <div class="stat"><b data-count="3">3</b><span>kamu kurumuna yapılan iş</span></div>
+    <div class="stat"><b>%100</b><span>yazılı sözleşme, yazılı malzeme listesi</span></div>
+  </div>
+</section>
+
+<section class="about" id="hakkimizda">
+  <div class="wrap grid">
+    <div class="pic reveal">
+      <img src="img/teslim-3.webp" alt="West Group İnşaat tarafından tamamlanan dairenin salonu, gerçek fotoğraf" loading="lazy">
+      <div class="badge">12 yıl<small>Ankara</small></div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Hakkımızda</div>
+      <h2>Devletin işini yapan, sizin işinizi de aynı ciddiyetle yapar.</h2>
+      <p class="lead">West Group İnşaat, kamu kurumlarının denetiminde ve şartnamesinde iş yaparak büyüdü. Bugün aynı disiplini arsa sahipleriyle yaptığımız kat karşılığı projelere taşıyoruz.</p>
+      <div class="timeline">
+        <div><b>Kamu projeleri</b><span>Kurumların şartnamesine, takvimine ve denetimine göre iş teslim ettik.</span>
+          <div class="kurum" style="padding:10px 0 0"><i>TMSF</i><i>Emniyet Genel Müdürlüğü</i><i>Jandarma Genel Komutanlığı</i></div></div>
+        <div><b>Yap-sat konut</b><span>Kendi arsamızda, kendi sermayemizle, satılabilir kalitede daireler ürettik.</span></div>
+        <div><b>Kentsel dönüşüm ve kat karşılığı</b><span>Bugün işimizin merkezinde arsa sahibiyle ortaklık var. Arsanızı bize değil, ortak bir projeye emanet ediyorsunuz.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="surec">
+  <div class="wrap">
+    <div class="eyebrow">Kat karşılığı süreci</div>
+    <h2>Arsa sahibi neyle karşılaşacağını baştan bilmeli.</h2>
+    <p class="lead">Kat karşılığında en büyük korku belirsizliktir. Bizde süreç beş adımdır ve her adım kâğıt üzerindedir.</p>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3>Ön inceleme</h3><p>Tapu, imar durumu ve emsal hakkını inceleriz. Arsanızda ne kadar inşaat alanı çıkacağını size açıkça gösteririz. Bu aşama ücretsizdir.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3>Yazılı teklif</h3><p>Paylaşım oranı, hangi dairelerin size kalacağı ve teslim süresi tek sayfada yazılı olarak elinize gelir.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3>Noter sözleşmesi</h3><p>Anlaşılan her şey, malzeme listesi ve teslim tarihi dahil, noter onaylı sözleşmeye girer.</p></div>
+      <div class="step reveal"><div class="n">04</div><h3>Görünür inşaat</h3><p>Temelden çatıya her aşamada fotoğraflı bilgilendirme yaparız. Şantiyemizin kapısı arsa sahibine her zaman açıktır.</p></div>
+      <div class="step reveal"><div class="n">05</div><h3>Teslim ve iskân</h3><p>Daireleriniz iskânı alınmış, anahtarı teslim edilmiş ve tapusu devredilmiş olarak size kalır.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projeler">
+  <div class="wrap">
+    <div class="eyebrow">Projeler</div>
+    <h2>Çizimde değil, sahada.</h2>
+    <p class="lead">Teslim ettiğimiz işin gerçek fotoğrafları ve devam eden projelerimiz. Gerçek fotoğraflar ile proje görsellerini ayrı etiketledik, ikisini karıştırmıyoruz.</p>
+    <div class="filters" role="tablist">
+      <button class="on" data-f="all">Tümü</button>
+      <button data-f="done">Tamamlanan</button>
+      <button data-f="live">Devam eden</button>
+    </div>
+
+    <article class="proj reveal" data-k="done" data-g="teslim">
+      <div class="cover" data-i="0"><img src="img/teslim-1.webp" alt="Tamamlanan daire mutfak, gerçek fotoğraf" loading="lazy"><span class="chip real">Gerçek fotoğraf</span></div>
+      <div class="info">
+        <span class="status">Teslim edildi</span>
+        <h3>Teslim Edilen Daire</h3>
+        <div class="loc">Ankara</div>
+        <div class="spec">
+          <div><small>Durum</small><b>Tamamlandı</b></div>
+          <div><small>Fotoğraf</small><b>14 kare, rötuşsuz</b></div>
+        </div>
+        <p class="lead" style="font-size:15px">Ada mutfak, giyinme odası, duşakabinli banyolar, cam balkon. Bir dairenin teslimden önceki hali, olduğu gibi.</p>
+        <div class="thumbs"></div>
+      </div>
+    </article>
+
+    <article class="proj reveal" data-k="live" data-g="susuz">
+      <div class="cover" data-i="1"><img src="img/susuz-2.webp" alt="Susuz konut projesi dış cephe görseli" loading="lazy"><span class="chip">Proje görseli</span></div>
+      <div class="info">
+        <span class="status">Tamamlanmak üzere</span>
+        <h3>Susuz Konutları</h3>
+        <div class="loc">Susuz, Ankara</div>
+        <div class="spec">
+          <div><small>Daire</small><b>16 adet</b></div>
+          <div><small>Tip</small><b>2+1</b></div>
+        </div>
+        <div class="thumbs"></div>
+      </div>
+    </article>
+
+    <article class="proj reveal" data-k="live" data-g="keklik">
+      <div class="cover" data-i="0"><img src="img/keklik-3.webp" alt="Keklik Pınarı projesi dış cephe görseli" loading="lazy"><span class="chip">Proje görseli</span></div>
+      <div class="info">
+        <span class="status">Devam ediyor</span>
+        <h3>Keklik Pınarı</h3>
+        <div class="loc">Dikmen, Çankaya / Ankara</div>
+        <div class="spec">
+          <div><small>Daire</small><b>18 adet 1+1</b></div>
+          <div><small>Ticari</small><b>1 iş yeri</b></div>
+        </div>
+        <div class="thumbs"></div>
+      </div>
+    </article>
+    <p class="note">"Proje görseli" etiketli kareler mimari görselleştirmedir. Uygulamada küçük farklılıklar olabilir.</p>
+  </div>
+</section>
+
+<section class="mat" id="malzeme">
+  <div class="wrap">
+    <div class="eyebrow">Malzeme anlayışımız</div>
+    <h2>Görünmeyen yerden tasarruf etmeyiz.</h2>
+    <p class="lead">Bir binanın kalitesi duvarın içinde, zeminin altında başlar. Malzemeyi Ankara'nın köklü tedarikçilerinden alır, ne kullanacağımızı sözleşmeye yazarız. Aşağıdakiler teslim ettiğimiz bir dairenin gerçek fotoğrafları.</p>
+    <div class="grid">
+      <div class="card reveal" data-g="teslim" data-i="7"><img src="img/teslim-8.webp" alt="Banyo, gerçek fotoğraf" loading="lazy"><div><h3>Banyo & Vitrifiye</h3><p>Gömme rezervuar, cam duşakabin, büyük ebat seramik</p></div></div>
+      <div class="card reveal" data-g="teslim" data-i="0"><img src="img/teslim-1.webp" alt="Mutfak, gerçek fotoğraf" loading="lazy"><div><h3>Mutfak</h3><p>Ada tezgâh, ankastre hazırlığı, tam boy dolap</p></div></div>
+      <div class="card reveal" data-g="teslim" data-i="2"><img src="img/teslim-3.webp" alt="Cam balkon, gerçek fotoğraf" loading="lazy"><div><h3>Doğrama & Cephe</h3><p>Isı yalıtımlı doğrama, geniş cam yüzeyler</p></div></div>
+      <div class="card reveal" data-g="teslim" data-i="9"><img src="img/teslim-10.webp" alt="Laminat zeminli oda, gerçek fotoğraf" loading="lazy"><div><h3>Zemin & İnce İşler</h3><p>Granit seramik, laminat parke, kartonpiyer</p></div></div>
+    </div>
+    <div class="promise">
+      <div><b>Liste sözleşmede</b><span>Kullanılacak malzemenin cinsi ve sınıfı sözleşme ekinde yazılıdır.</span></div>
+      <div><b>Belgeli ürün</b><span>Yapıya giren ürünler standartlara uygun ve belgelidir.</span></div>
+      <div><b>Yerinde görün</b><span>Seçtiğimiz malzemeyi şantiyede ya da tedarikçide yerinde görebilirsiniz.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="iletisim">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="eyebrow">Arsanızı değerlendirelim</div>
+      <h2>Arsanızda ne çıkar, birlikte bakalım.</h2>
+      <p class="lead">Bilgileri doldurun, mesaj doğrudan WhatsApp'ımıza gelsin. Ön değerlendirme ücretsizdir ve sizi hiçbir şeye bağlamaz.</p>
+      <div class="direct">
+        <a href="tel:+905331960989"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span><small>Telefon</small><b>+90 533 196 09 89</b></span></a>
+        <a href="https://instagram.com/westgroupinsaat" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg><span><small>Instagram</small><b>@westgroupinsaat</b></span></a>
+        <a href="https://maps.google.com/?q=Yenimahalle,Ankara" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Merkez</small><b>Yenimahalle / Ankara</b></span></a>
+      </div>
+    </div>
+    <form id="f" class="reveal">
+      <div><label for="ad">Adınız soyadınız</label><input id="ad" required autocomplete="name"></div>
+      <div><label for="tel">Telefon</label><input id="tel" type="tel" required autocomplete="tel" inputmode="tel"></div>
+      <div><label for="ilce">İlçe</label>
+        <select id="ilce" required>
+          <option value="">Seçin</option>
+          <option>Çankaya</option><option>Yenimahalle</option><option>Keçiören</option><option>Mamak</option><option>Etimesgut</option><option>Sincan</option><option>Altındağ</option><option>Pursaklar</option><option>Gölbaşı</option><option>Diğer</option>
+        </select></div>
+      <div><label for="mah">Mahalle</label><input id="mah"></div>
+      <div><label for="parsel">Ada / Parsel</label><input id="parsel" placeholder="Örn. 12345 / 6"></div>
+      <div><label for="m2">Arsa alanı (m²)</label><input id="m2" inputmode="numeric"></div>
+      <div class="full"><label for="durum">Arsanın şu anki durumu</label>
+        <select id="durum"><option>Boş arsa</option><option>Üzerinde eski bina var</option><option>Riskli yapı / kentsel dönüşüm</option><option>Bilmiyorum</option></select></div>
+      <div class="full"><label for="not">Eklemek istedikleriniz</label><textarea id="not" placeholder="Hisseli mi, kaç malik var, imar durumu biliniyor mu..."></textarea></div>
+      <div class="full"><button class="btn btn-gold" type="submit"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>WhatsApp ile Gönder</button></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> West Group İnşaat Tic. Ltd. Şti. · Yenimahalle / Ankara</span>
+    <span>+90 533 196 09 89 · @westgroupinsaat</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/905331960989?text=Merhaba%2C%20web%20sitenizden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg></a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button class="x" aria-label="Kapat">×</button>
+  <button class="p" aria-label="Önceki">‹</button>
+  <img alt="">
+  <button class="nx" aria-label="Sonraki">›</button>
+  <div class="cap"></div>
+</div>
+
+<script>
+const G={
+  teslim:{n:14,p:'teslim',cap:'Teslim edilen daire · Gerçek fotoğraf'},
+  susuz:{n:16,p:'susuz',cap:'Susuz Konutları · Proje görseli'},
+  keklik:{n:6,p:'keklik',cap:'Keklik Pınarı · Proje görseli'}
+};
+const src=(g,i,s)=>`img/${G[g].p}-${i+1}${s?'-s':''}.webp`;
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// thumbs
+document.querySelectorAll('.proj').forEach(p=>{
+  const g=p.dataset.g,t=p.querySelector('.thumbs'),n=G[g].n,show=Math.min(4,n);
+  for(let i=0;i<show;i++){
+    const idx=g==='susuz'?[0,9,13,10][i]:g==='teslim'?[2,7,11,8][i]:[1,3,4,5][i];
+    const b=document.createElement('button');b.dataset.i=idx;b.setAttribute('aria-label','Fotoğrafı büyüt');
+    b.innerHTML=`<img src="${src(g,idx,1)}" alt="" loading="lazy">`+(i===show-1&&n>4?`<span class="more">+${n-3}</span>`:'');
+    t.appendChild(b);
+  }
+});
+
+// lightbox
+const lb=document.getElementById('lb'),li=lb.querySelector('img'),lc=lb.querySelector('.cap');let cg,ci;
+function show(){li.src=src(cg,ci);lc.textContent=`${G[cg].cap} · ${ci+1}/${G[cg].n}`;}
+function open(g,i){cg=g;ci=+i;show();lb.classList.add('on');document.body.style.overflow='hidden';}
+function close(){lb.classList.remove('on');document.body.style.overflow='';}
+function step(d){ci=(ci+d+G[cg].n)%G[cg].n;show();}
+document.addEventListener('click',e=>{
+  const el=e.target.closest('[data-i]');if(!el||el.closest('.lb'))return;
+  const host=el.closest('[data-g]');if(host)open(host.dataset.g,el.dataset.i);
+});
+lb.querySelector('.x').onclick=close;lb.querySelector('.p').onclick=()=>step(-1);lb.querySelector('.nx').onclick=()=>step(1);
+lb.addEventListener('click',e=>{if(e.target===lb)close();});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1);});
+let sx=null;lb.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+lb.addEventListener('touchend',e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>45)step(d<0?1:-1);sx=null;});
+
+// filters
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.proj').forEach(p=>p.style.display=(b.dataset.f==='all'||p.dataset.k===b.dataset.f)?'':'none');
+});
+
+// header
+const h=document.getElementById('hdr');const onS=()=>h.classList.toggle('solid',scrollY>40);addEventListener('scroll',onS,{passive:true});onS();
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// form -> WhatsApp
+document.getElementById('f').addEventListener('submit',e=>{
+  e.preventDefault();const v=id=>document.getElementById(id).value.trim();
+  const t=`Merhaba, arsamı kat karşılığı değerlendirmek istiyorum.
+Ad Soyad: ${v('ad')}
+Telefon: ${v('tel')}
+Konum: ${v('ilce')}${v('mah')?' / '+v('mah'):''}
+Ada/Parsel: ${v('parsel')||'-'}
+Alan: ${v('m2')?v('m2')+' m²':'-'}
+Durum: ${v('durum')}
+Not: ${v('not')||'-'}`;
+  window.open('https://wa.me/905331960989?text='+encodeURIComponent(t),'_blank');
+});
+</script>
+</body>
+</html>
