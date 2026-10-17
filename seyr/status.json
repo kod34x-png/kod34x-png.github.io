@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-10-17T01:03:44+00:00",
+ "checkedAt": "2026-10-17T07:01:50+00:00",
  "cams": {
   "new-york": {
    "ok": true,
@@ -58,9 +58,11 @@
    "channel": "https://www.youtube.com/@SHOWMECaribbean"
   },
   "meksiko-zocalo": {
-   "ok": false,
-   "yt": "Z7bECtLg40A",
-   "state": "down",
+   "ok": true,
+   "yt": "x0BeV_vM7Mc",
+   "state": "live",
+   "title": "⚠️ CDMX emite ALERTAS | Lluvias y vientos fuertes, posible granizo. Zócalo En Vivo",
+   "replaced": true,
    "channel": "https://www.youtube.com/@webcamsdemexico"
   },
   "cancun": {
