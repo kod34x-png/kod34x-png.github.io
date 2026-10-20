@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-10-19T19:04:03+00:00",
+ "checkedAt": "2026-10-20T01:07:01+00:00",
  "cams": {
   "new-york": {
    "ok": true,
@@ -303,14 +303,14 @@
    "why": "ok"
   },
   "seattle-pike": {
-   "ok": true,
+   "ok": false,
    "state": "img",
-   "why": "ok"
+   "why": "TimeoutError (deneme 1)"
   },
   "seattle-pioneer": {
-   "ok": true,
+   "ok": false,
    "state": "img",
-   "why": "ok"
+   "why": "TimeoutError (deneme 1)"
   },
   "toronto-bay": {
    "ok": true,
