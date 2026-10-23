@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KomşuM</title>
+<meta name="description" content="Küçük işin için komşun gelsin. Komşun ek gelir kazansın.">
+<meta name="theme-color" content="#1D46A8">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="KomşuM">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mavi:#1D46A8;      /* emaye kapı numarası mavisi */
+  --mavi-koyu:#14317A;
+  --mavi-acik:#E4EAF7;
+  --zemin:#F3F5F9;     /* kireç badana */
+  --kart:#FFFFFF;
+  --murekkep:#14213D;
+  --gri:#5A6478;
+  --cizgi:#D5DBE6;
+  --sari:#F2B705;      /* ampul sarısı */
+  --nar:#C8323A;
+  --yesil:#1E7A4D;
+  --golge:0 1px 0 rgba(20,33,61,.06), 0 6px 18px rgba(20,33,61,.07);
+  --r-buyuk:22px; --r:14px; --r-kucuk:10px;
+  --font:"Atkinson Hyperlegible", system-ui, sans-serif;
+  --baslik:"Bricolage Grotesque", var(--font);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --zemin:#0E1424; --kart:#18203A; --murekkep:#EEF1F8; --gri:#A6AEC2;
+    --cizgi:#2B3555; --mavi-acik:#1F2C52; --mavi:#4E74D6; --mavi-koyu:#3A5FC2;
+    --golge:0 1px 0 rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --zemin:#0E1424; --kart:#18203A; --murekkep:#EEF1F8; --gri:#A6AEC2;
+  --cizgi:#2B3555; --mavi-acik:#1F2C52; --mavi:#4E74D6; --mavi-koyu:#3A5FC2;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html,body{margin:0}
+body{
+  background:var(--zemin); color:var(--murekkep);
+  font-family:var(--font); font-size:19px; line-height:1.45;
+  -webkit-font-smoothing:antialiased; min-height:100dvh;
+}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sari); outline-offset:2px}
+.uygulama{max-width:520px; margin:0 auto; min-height:100dvh; display:flex; flex-direction:column; padding:0 16px calc(24px + env(safe-area-inset-bottom))}
+
+/* üst bar */
+.ust{display:flex; align-items:center; justify-content:space-between; padding:14px 0 10px; gap:8px}
+.logo{display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--murekkep); background:none; border:0; padding:0; cursor:pointer}
+.logo svg{width:38px; height:38px; flex:none}
+.logo b{font-family:var(--baslik); font-weight:800; font-size:24px; letter-spacing:-.02em}
+.logo b span{color:var(--mavi)}
+.rol-degis{display:flex; background:var(--kart); border:1px solid var(--cizgi); border-radius:999px; padding:3px; font-size:14px}
+.rol-degis button{border:0; background:none; padding:6px 10px; border-radius:999px; cursor:pointer; color:var(--gri)}
+.rol-degis button[aria-pressed="true"]{background:var(--mavi); color:#fff}
+
+h1,h2,h3{font-family:var(--baslik); letter-spacing:-.015em; margin:0}
+h1{font-size:32px; line-height:1.12; font-weight:800}
+h2{font-size:24px; line-height:1.2; font-weight:800}
+h3{font-size:20px; font-weight:600}
+p{margin:0}
+.ince{color:var(--gri); font-size:17px}
+.yigin{display:flex; flex-direction:column; gap:14px}
+.ekran{display:flex; flex-direction:column; gap:18px; padding-top:8px; flex:1}
+.ekran[hidden]{display:none}
+
+/* emaye tabela kart: beyaz iç çerçeve */
+.tabela{
+  background:var(--mavi); color:#fff; border-radius:var(--r-buyuk); padding:22px;
+  box-shadow:inset 0 0 0 6px var(--mavi), inset 0 0 0 8px rgba(255,255,255,.85);
+}
+.tabela .ince{color:rgba(255,255,255,.82)}
+
+.kart{background:var(--kart); border:1px solid var(--cizgi); border-radius:var(--r); padding:16px; box-shadow:var(--golge)}
+.btn{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  min-height:60px; padding:14px 18px; border-radius:var(--r); border:0; cursor:pointer;
+  font-weight:700; font-size:20px; background:var(--mavi); color:#fff; width:100%; text-decoration:none;
+}
+.btn:active{transform:translateY(1px)}
+.btn.ikincil{background:var(--kart); color:var(--murekkep); border:2px solid var(--cizgi)}
+.btn.sari{background:var(--sari); color:#1b1600}
+.btn.yesil{background:var(--yesil)}
+.btn:disabled{opacity:.5; cursor:not-allowed}
+.btn small{font-weight:400; font-size:15px; opacity:.85}
+.link{background:none; border:0; color:var(--mavi); font-weight:700; padding:8px 0; cursor:pointer; font-size:17px; text-align:left}
+
+.secim{display:grid; gap:12px}
+.secim .btn{justify-content:flex-start; text-align:left; min-height:84px; flex-direction:column; align-items:flex-start; gap:2px}
+
+.alan{display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:17px}
+input.giris, textarea.giris, select.giris{
+  border:2px solid var(--cizgi); background:var(--kart); border-radius:var(--r-kucuk);
+  padding:14px; font-size:19px; width:100%;
+}
+input.giris:focus, textarea.giris:focus, select.giris:focus{border-color:var(--mavi); outline:none}
+textarea.giris{min-height:96px; resize:vertical}
+
+/* mikrofon — sayfanın tek gösterişli öğesi */
+.mik-alan{display:flex; flex-direction:column; align-items:center; gap:14px; padding:14px 0 4px}
+.mik{
+  width:168px; height:168px; border-radius:50%; border:0; cursor:pointer; position:relative;
+  background:var(--mavi); color:#fff; display:grid; place-items:center;
+  box-shadow:inset 0 0 0 10px var(--mavi), inset 0 0 0 13px rgba(255,255,255,.9), 0 12px 30px rgba(29,70,168,.28);
+}
+.mik svg{width:62px; height:62px}
+.mik.dinliyor{background:var(--nar); box-shadow:inset 0 0 0 10px var(--nar), inset 0 0 0 13px rgba(255,255,255,.9), 0 0 0 0 rgba(200,50,58,.45); animation:nabiz 1.4s infinite}
+@keyframes nabiz{70%{box-shadow:inset 0 0 0 10px var(--nar), inset 0 0 0 13px rgba(255,255,255,.9), 0 0 0 22px rgba(200,50,58,0)}}
+@media (prefers-reduced-motion: reduce){.mik.dinliyor{animation:none}}
+.mik-yazi{font-weight:700; font-size:21px}
+.ornek{font-size:16px; color:var(--gri); text-align:center; max-width:30ch}
+
+.cipler{display:flex; flex-wrap:wrap; gap:8px}
+.cip{border:2px solid var(--cizgi); background:var(--kart); border-radius:999px; padding:8px 14px; cursor:pointer; font-size:16px}
+.cip[aria-pressed="true"]{border-color:var(--mavi); background:var(--mavi-acik); color:var(--mavi-koyu); font-weight:700}
+
+.fiyat-satir{display:flex; align-items:center; gap:10px}
+.fiyat-satir button{width:56px; height:56px; border-radius:var(--r-kucuk); border:2px solid var(--cizgi); background:var(--kart); font-size:26px; cursor:pointer; flex:none}
+.fiyat-satir output{flex:1; text-align:center; font-family:var(--baslik); font-weight:800; font-size:40px}
+.oneri{background:var(--mavi-acik); color:var(--mavi-koyu); border-radius:var(--r-kucuk); padding:10px 12px; font-size:16px}
+.uyari{background:#FBE9EA; color:#7A1E23; border-radius:var(--r-kucuk); padding:12px; font-size:16px}
+.demo-not{font-size:13px; color:var(--gri); display:flex; gap:6px; align-items:center}
+.demo-etiket{display:inline-block; font-size:12px; font-weight:700; background:var(--sari); color:#1b1600; border-radius:6px; padding:2px 7px; vertical-align:middle}
+
+/* ilan kartı */
+.ilan{display:grid; grid-template-columns:1fr auto; gap:4px 12px; align-items:start; text-align:left; width:100%; cursor:pointer}
+.ilan .fiyat{font-family:var(--baslik); font-weight:800; font-size:26px; color:var(--mavi); grid-row:span 2}
+.ilan .meta{font-size:15px; color:var(--gri)}
+.ilan.yeni{animation:gelis .6s ease-out}
+@keyframes gelis{from{background:var(--mavi-acik)}}
+.durum{display:inline-block; font-size:14px; font-weight:700; padding:3px 10px; border-radius:999px; background:var(--mavi-acik); color:var(--mavi-koyu)}
+.durum.kabul,.durum.yolda{background:#FFF4CC; color:#5C4600}
+.durum.bitti{background:#DDF2E6; color:#155C38}
+
+.komsu-kart{display:flex; gap:14px; align-items:center}
+.avatar{width:58px; height:58px; border-radius:16px; background:var(--mavi); color:#fff; display:grid; place-items:center; font-family:var(--baslik); font-weight:800; font-size:24px; flex:none}
+.rozet{display:inline-flex; align-items:center; gap:4px; font-size:14px; font-weight:700; color:var(--yesil)}
+.yildizlar{display:flex; gap:6px; justify-content:center}
+.yildizlar button{font-size:40px; background:none; border:0; cursor:pointer; color:var(--cizgi); padding:0 2px; line-height:1}
+.yildizlar button[aria-pressed="true"]{color:var(--sari)}
+
+.adimlar{display:flex; flex-direction:column; gap:0; position:relative}
+.adim{display:flex; gap:12px; align-items:flex-start; padding:8px 0; color:var(--gri)}
+.adim i{width:26px; height:26px; border-radius:50%; border:3px solid var(--cizgi); flex:none; font-style:normal; display:grid; place-items:center; font-size:14px; background:var(--kart)}
+.adim.tamam{color:var(--murekkep)}
+.adim.tamam i{background:var(--yesil); border-color:var(--yesil); color:#fff}
+.adim.simdi{color:var(--murekkep); font-weight:700}
+.adim.simdi i{border-color:var(--mavi)}
+
+.kazanc{display:flex; justify-content:space-between; align-items:flex-end}
+.kazanc strong{font-family:var(--baslik); font-size:38px; font-weight:800; line-height:1}
+
+.kod-kutu{display:flex; gap:10px; justify-content:center}
+.kod-kutu input{width:58px; height:68px; text-align:center; font-size:30px; font-weight:700; border:2px solid var(--cizgi); border-radius:var(--r-kucuk); background:var(--kart)}
+
+.nfc{display:grid; place-items:center; gap:14px; padding:20px 0}
+.nfc-telefon{width:120px; height:200px; border-radius:22px; border:5px solid var(--murekkep); position:relative; background:var(--kart)}
+.nfc-kart{position:absolute; width:150px; height:94px; border-radius:10px; background:linear-gradient(135deg,#D9E3F7,#B9C9EC); border:2px solid var(--mavi); left:-15px; top:120px; transition:top .9s ease}
+.nfc.okuyor .nfc-kart{top:60px}
+.ilerleme{width:100%; height:12px; border-radius:99px; background:var(--cizgi); overflow:hidden}
+.ilerleme div{height:100%; width:0; background:var(--mavi); transition:width .3s}
+
+.bos{text-align:center; padding:30px 10px; color:var(--gri)}
+.sekme-bar{display:flex; gap:8px}
+.sekme-bar .cip{flex:1; text-align:center}
+.toast{position:fixed; left:50%; bottom:calc(20px + env(safe-area-inset-bottom)); transform:translateX(-50%); background:var(--murekkep); color:var(--zemin); padding:14px 20px; border-radius:var(--r); font-weight:700; width:max-content; max-width:calc(100vw - 32px); text-align:center; z-index:20; box-shadow:var(--golge)}
+.ilan .kendi{font-size:14px; color:var(--gri); grid-column:1/-1}
+.alt-not{font-size:13px; color:var(--gri); text-align:center; padding:18px 0 4px}
+.iki{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+<div class="uygulama">
+  <header class="ust">
+    <button class="logo" id="logoBtn" aria-label="KomşuM ana sayfa">
+      <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#1D46A8"/><rect x="36" y="36" width="440" height="440" rx="84" fill="none" stroke="#fff" stroke-width="14"/><path d="M128 368 V200 L256 296 L384 200 V368" fill="none" stroke="#fff" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/><rect x="236" y="330" width="40" height="38" rx="6" fill="#F2B705"/></svg>
+      <b>Komşu<span>M</span></b>
+    </button>
+    <div class="rol-degis" id="rolDegis" hidden role="group" aria-label="Görünümü değiştir">
+      <button data-rol="ihtiyac" aria-pressed="true">İşim var</button>
+      <button data-rol="komsu" aria-pressed="false">Komşuyum</button>
+    </div>
+  </header>
+
+  <!-- KARŞILAMA -->
+  <section class="ekran" id="e-karsila">
+    <div class="tabela yigin">
+      <h1>Küçük işin için komşun gelsin.</h1>
+      <p class="ince">Perde, dolap kurma, pazar alışverişi. Fiyatı sen söylersin, yakındaki komşun yapar, ek gelir kazanır.</p>
+    </div>
+    <div class="secim">
+      <button class="btn" data-git="kayit" data-rol="ihtiyac">Bir işim var<small>İlan aç, komşun gelsin</small></button>
+      <button class="btn ikincil" data-git="kayit" data-rol="komsu">Komşuma yardım edip kazanmak istiyorum<small>Yakındaki işleri gör</small></button>
+    </div>
+    <p class="ince">Ustalık isteyen işler yok: elektrik, su, doğalgaz tesisatı KomşuM'da yer almaz.</p>
+    <p class="alt-not">KomşuM · Ankara pilot · Demo sürüm</p>
+  </section>
+
+  <!-- KAYIT -->
+  <section class="ekran" id="e-kayit" hidden>
+    <h2 id="kayitBaslik">Seni tanıyalım</h2>
+    <form id="kayitForm" class="yigin" novalidate>
+      <label class="alan">Adın
+        <input class="giris" name="ad" autocomplete="given-name" required maxlength="40" placeholder="Örn. Merve">
+      </label>
+      <label class="alan">Telefon numaran
+        <input class="giris" name="telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xx xx" required>
+      </label>
+      <label class="alan">İlçen
+        <select class="giris" name="ilce" required></select>
+      </label>
+      <div id="beceriAlan" class="yigin" hidden>
+        <span class="alan">Neler yapabilirsin?</span>
+        <div class="cipler" id="beceriler"></div>
+      </div>
+      <p class="uyari" id="kayitHata" hidden></p>
+      <button class="btn" type="submit">SMS kodu gönder</button>
+    </form>
+    <button class="link" data-git="karsila">Geri dön</button>
+  </section>
+
+  <!-- SMS -->
+  <section class="ekran" id="e-sms" hidden>
+    <h2>Telefonuna gelen kodu yaz</h2>
+    <p class="ince" id="smsNot"></p>
+    <div class="kod-kutu" id="kodKutu">
+      <input inputmode="numeric" maxlength="1" aria-label="Kod 1. hane">
+      <input inputmode="numeric" maxlength="1" aria-label="Kod 2. hane">
+      <input inputmode="numeric" maxlength="1" aria-label="Kod 3. hane">
+      <input inputmode="numeric" maxlength="1" aria-label="Kod 4. hane">
+    </div>
+    <p class="demo-not"><span class="demo-etiket">Demo</span> Gerçek SMS gönderilmez. Kod: 2468</p>
+    <button class="btn" id="smsOnay">Kodu onayla</button>
+  </section>
+
+  <!-- KİMLİK -->
+  <section class="ekran" id="e-kimlik" hidden>
+    <h2>Kimliğini doğrula</h2>
+    <p class="ince">Komşuların kapısını sana güvenle açsın diye çipli kimlik kartını telefonunun arkasına yasla.</p>
+    <div class="nfc" id="nfc">
+      <div class="nfc-telefon"><div class="nfc-kart"></div></div>
+      <div class="ilerleme" aria-hidden="true"><div id="nfcBar"></div></div>
+      <p id="nfcDurum" aria-live="polite">Hazır</p>
+    </div>
+    <p class="demo-not"><span class="demo-etiket">Demo</span> Kimlik okunmaz, sadece akış gösterilir.</p>
+    <button class="btn" id="nfcBasla">Kimliğimi okut</button>
+  </section>
+
+  <!-- İHTİYAÇ: ANA -->
+  <section class="ekran" id="e-ihtiyac" hidden>
+    <h2 id="merhaba">Merhaba</h2>
+    <div class="mik-alan">
+      <button class="mik" id="mik" aria-label="Bas ve işini anlat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+      </button>
+      <span class="mik-yazi" id="mikYazi">Bas ve işini anlat</span>
+      <p class="ornek">"Salona perde taktıracağım, 3 saat sürer, 400 lira veririm"</p>
+    </div>
+    <label class="alan">Ya da yaz
+      <textarea class="giris" id="serbestMetin" placeholder="Ne yapılsın, ne kadar verirsin?"></textarea>
+    </label>
+    <button class="btn" id="anlatBtn">İlanı hazırla</button>
+    <div class="yigin" id="ilanlarimAlan">
+      <h3>İlanlarım</h3>
+      <div class="yigin" id="ilanlarim"></div>
+    </div>
+  </section>
+
+  <!-- İHTİYAÇ: İLAN ONAY -->
+  <section class="ekran" id="e-onay" hidden>
+    <h2>İlanın hazır, kontrol et</h2>
+    <p class="uyari" id="ustalikUyari" hidden></p>
+    <label class="alan">Ne yapılacak
+      <input class="giris" id="oBaslik" maxlength="120">
+    </label>
+    <div class="yigin">
+      <span class="alan">Ne tür bir iş</span>
+      <div class="cipler" id="oKategori"></div>
+    </div>
+    <label class="alan">Açıklama
+      <textarea class="giris" id="oAciklama" maxlength="600"></textarea>
+    </label>
+    <div class="iki">
+      <label class="alan">Kaç saat sürer
+        <select class="giris" id="oSure"></select>
+      </label>
+      <label class="alan">İlçe
+        <select class="giris" id="oIlce"></select>
+      </label>
+    </div>
+    <div class="yigin">
+      <span class="alan">Ne kadar verirsin</span>
+      <div class="fiyat-satir">
+        <button type="button" id="fEksi" aria-label="50 lira azalt">−</button>
+        <output id="oFiyat" aria-live="polite">400 ₺</output>
+        <button type="button" id="fArti" aria-label="50 lira artır">+</button>
+      </div>
+      <p class="oneri" id="oneri"></p>
+    </div>
+    <div class="yigin">
+      <span class="alan">Ödeme</span>
+      <div class="cipler" id="odemeSecim">
+        <button class="cip" data-odeme="uygulama" aria-pressed="true">Uygulamadan öde</button>
+        <button class="cip" data-odeme="elden" aria-pressed="false">Elden öde</button>
+      </div>
+      <p class="demo-not"><span class="demo-etiket">Demo</span> Uygulamadan ödemede para iş bitene kadar güvencede tutulur. Demoda gerçek ödeme alınmaz.</p>
+    </div>
+    <button class="btn" id="yayinla">İlanı yayınla</button>
+    <button class="link" data-git="ihtiyac">Vazgeç</button>
+  </section>
+
+  <!-- İHTİYAÇ: İLAN TAKİP -->
+  <section class="ekran" id="e-takip" hidden>
+    <h2 id="tBaslik"></h2>
+    <p class="ince" id="tMeta"></p>
+    <div class="kart adimlar" id="tAdimlar"></div>
+    <div id="tKomsu"></div>
+    <div id="tAksiyon" class="yigin"></div>
+    <button class="link" data-git="ihtiyac">İlanlarıma dön</button>
+  </section>
+
+  <!-- ÖDEME -->
+  <section class="ekran" id="e-odeme" hidden>
+    <h2>Ödemeyi onayla</h2>
+    <div class="kart yigin">
+      <div class="kazanc"><span class="ince">Komşuna geçecek tutar</span><strong id="odTutar">0 ₺</strong></div>
+      <p class="ince" id="odAciklama"></p>
+    </div>
+    <div class="kart yigin" aria-disabled="true">
+      <span class="alan">Kayıtlı kart</span>
+      <p>•••• •••• •••• 0000 <span class="demo-etiket">Demo</span></p>
+      <p class="demo-not">Kart bilgisi istenmez ve saklanmaz. Gerçek sürümde lisanslı ödeme kuruluşu altyapısı kullanılacak.</p>
+    </div>
+    <button class="btn yesil" id="odOnay">Ödemeyi onayla</button>
+    <button class="link" id="odGeri">Geri dön</button>
+  </section>
+
+  <!-- PUAN -->
+  <section class="ekran" id="e-puan" hidden>
+    <h2 id="pBaslik">Komşun nasıldı?</h2>
+    <div class="yildizlar" id="yildizlar" role="group" aria-label="Puan ver"></div>
+    <button class="btn" id="puanGonder" disabled>Puanı gönder</button>
+  </section>
+
+  <!-- KOMŞU: İŞLER -->
+  <section class="ekran" id="e-komsu" hidden>
+    <div class="tabela">
+      <div class="kazanc"><span>Bu ay kazandığın</span><strong id="kKazanc">0 ₺</strong></div>
+      <p class="ince" id="kOzet"></p>
+    </div>
+    <div class="sekme-bar" role="group" aria-label="İşleri filtrele">
+      <button class="cip" data-filtre="ilce" aria-pressed="true">İlçemdekiler</button>
+      <button class="cip" data-filtre="hepsi" aria-pressed="false">Tüm Ankara</button>
+    </div>
+    <div class="yigin" id="aktifIsAlan" hidden>
+      <h3>Şu anki işin</h3>
+      <div id="aktifIs"></div>
+    </div>
+    <h3>Yakındaki işler</h3>
+    <div class="yigin" id="isler" aria-live="polite"></div>
+  </section>
+
+  <!-- KOMŞU: İŞ DETAY -->
+  <section class="ekran" id="e-isdetay" hidden>
+    <h2 id="dBaslik"></h2>
+    <div class="kart yigin">
+      <div class="kazanc"><span class="ince">Kazanacağın</span><strong id="dFiyat"></strong></div>
+      <p id="dAciklama"></p>
+      <p class="ince" id="dMeta"></p>
+    </div>
+    <p class="ince">Kabul edince ilan sahibine adın ve puanın görünür. Telefon numaran gizli kalır, uygulamadan yazışırsınız.</p>
+    <div id="dAksiyon" class="yigin"></div>
+    <button class="link" data-git="komsu">İşlere dön</button>
+  </section>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+const SUPABASE_URL = "https://jagcbumxmdiizjadyqse.supabase.co";
+const SUPABASE_KEY = "sb_publishable_DBIEleRBAPcZOLyVJX4tJQ_J1hObMsp";
+const db = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const ILCELER = ["Altındağ","Çankaya","Etimesgut","Gölbaşı","Keçiören","Mamak","Pursaklar","Sincan","Yenimahalle","Akyurt","Ayaş","Bala","Beypazarı","Çubuk","Elmadağ","Haymana","Kahramankazan","Kalecik","Kızılcahamam","Nallıhan","Polatlı","Şereflikoçhisar","Çamlıdere","Güdül","Evren"];
+const KATEGORILER = {
+  "Tak & Kur":  {saat:[130,170], kelime:["perde","korniş","raf","tablo","ayna","dolap","gardırop","demonte","mobilya","kur","tak","monte","montaj","tv","televizyon","askı","sehpa","masa","yatak","baza","kitaplık"]},
+  "Ayak İşi":   {saat:[120,160], kelime:["pazar","market","eczane","alışveriş","fırın","ekmek","kargo","postane","fatura","kuyruk","getir","götür","al gel"]},
+  "El Ver":     {saat:[140,180], kelime:["taşın","taşı","kat","koli","kutu","eşya","yukarı","aşağı","kaldır","bodrum"]},
+  "Ev & Bahçe": {saat:[130,170], kelime:["bahçe","çim","budama","balkon","temizlik","temizle","cam","toz","yaprak","çiçek","saksı","düzen"]},
+  "Yanında Ol": {saat:[120,160], kelime:["hastane","doktor","eşlik","refakat","telefon","tablet","whatsapp","e-devlet","bilgisayar","yürüyüş","sohbet","banka"]},
+  "Pati":       {saat:[110,150], kelime:["köpek","kedi","gezdir","mama","pati","hayvan","kuş","akvaryum"]}
+};
+const USTALIK = ["elektrik","priz","sigorta","kablo","avize","kombi","doğalgaz","gaz","tesisat","musluk","lavabo","tıkanık","klima","su kaçağı","petek","şofben","araba","arabayla","araçla","kamyonet","nakliye"];
+const SAYILAR = {"bir":1,"iki":2,"üç":3,"dört":4,"beş":5,"altı":6,"yedi":7,"sekiz":8,"yarım":0.5};
+
+/* ---------- yardımcılar ---------- */
+const $ = s => document.querySelector(s);
+const el = (tag, attrs = {}, ...cocuk) => {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") e.className = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (v !== undefined && v !== null && v !== false) e.setAttribute(k, v);
+  }
+  for (const c of cocuk.flat()) if (c != null) e.append(c.nodeType ? c : String(c));
+  return e;
+};
+const tl = n => `${Math.round(n).toLocaleString("tr-TR")} ₺`;
+const sakla = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+const oku = k => { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } };
+const sil = k => { try { localStorage.removeItem(k); } catch {} };
+let toastZaman;
+function toast(m){ const t=$("#toast"); t.textContent=m; t.hidden=false; clearTimeout(toastZaman); toastZaman=setTimeout(()=>t.hidden=true, 2600); }
+function zaman(iso){
+  const dk = Math.max(0, Math.round((Date.now() - new Date(iso)) / 60000));
+  if (dk < 1) return "az önce"; if (dk < 60) return `${dk} dk önce`;
+  const s = Math.round(dk/60); if (s < 24) return `${s} saat önce`;
+  return `${Math.round(s/24)} gün önce`;
+}
+function harf(ad){ return (ad||"?").trim().charAt(0).toLocaleUpperCase("tr-TR"); }
+function ortalama(u){ return u && u.puan_sayisi ? (u.puan_toplam/u.puan_sayisi).toFixed(1) : "Yeni"; }
+
+/* ---------- durum ---------- */
+let ben = oku("komsum_ben");      // {id, ad, ilce, rol, ...}
+let taslak = null;                 // hazırlanan ilan
+let aktifIlanId = null;
+let kayitRol = "ihtiyac";
+let kayitBilgi = null;
+let filtre = "ilce";
+let ilanCache = [];
+
+/* ---------- ekranlar ---------- */
+function git(ad){
+  document.querySelectorAll(".ekran").forEach(s => s.hidden = s.id !== `e-${ad}`);
+  window.scrollTo(0,0);
+  $("#rolDegis").hidden = !ben;
+  if (ad === "ihtiyac") cizIhtiyac();
+  if (ad === "komsu") cizKomsu();
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-git]"); if (!b) return;
+  if (b.dataset.rol) kayitRol = b.dataset.rol;
+  if (b.dataset.git === "kayit") hazirlaKayit();
+  git(b.dataset.git);
+});
+$("#logoBtn").addEventListener("click", () => git(ben ? (ben.rol === "komsu" ? "komsu" : "ihtiyac") : "karsila"));
+
+/* ---------- kayıt ---------- */
+function ilceDoldur(sel, secili){
+  sel.replaceChildren(...ILCELER.map(i => el("option", {value:i, selected: i === secili ? "" : null}, i)));
+}
+function hazirlaKayit(){
+  ilceDoldur($("#kayitForm [name=ilce]"), "Çankaya");
+  $("#kayitBaslik").textContent = kayitRol === "komsu" ? "Komşu olarak katıl" : "Seni tanıyalım";
+  $("#beceriAlan").hidden = kayitRol !== "komsu";
+  $("#beceriler").replaceChildren(...Object.keys(KATEGORILER).map(k =>
+    el("button", {type:"button", class:"cip", "aria-pressed":"false", onclick: e => {
+      const b=e.currentTarget; b.setAttribute("aria-pressed", b.getAttribute("aria-pressed")==="true"?"false":"true");
+    }}, k)));
+  $("#kayitHata").hidden = true;
+}
+$("#kayitForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const ad = (f.get("ad")||"").trim(), telefon = (f.get("telefon")||"").replace(/\D/g,"");
+  const hata = $("#kayitHata");
+  if (ad.length < 2) { hata.textContent = "Adını yaz, en az 2 harf."; hata.hidden = false; return; }
+  if (telefon.length < 10) { hata.textContent = "Telefon numaranı 05 ile başlayarak yaz."; hata.hidden = false; return; }
+  const beceriler = [...document.querySelectorAll("#beceriler .cip[aria-pressed=true]")].map(b => b.textContent);
+  if (kayitRol === "komsu" && !beceriler.length) { hata.textContent = "En az bir iş türü seç."; hata.hidden = false; return; }
+  kayitBilgi = { ad, telefon: telefon.slice(-4).padStart(telefon.length,"•"), ilce: f.get("ilce"), rol: kayitRol, beceriler };
+  $("#smsNot").textContent = `${f.get("telefon")} numarasına 4 haneli kod gönderdik.`;
+  document.querySelectorAll("#kodKutu input").forEach(i => i.value = "");
+  git("sms");
+  setTimeout(() => $("#kodKutu input").focus(), 50);
+});
+$("#kodKutu").addEventListener("input", e => {
+  const i = e.target; i.value = i.value.replace(/\D/g,"").slice(0,1);
+  if (i.value && i.nextElementSibling) i.nextElementSibling.focus();
+});
+$("#kodKutu").addEventListener("keydown", e => {
+  if (e.key === "Backspace" && !e.target.value && e.target.previousElementSibling) e.target.previousElementSibling.focus();
+});
+$("#smsOnay").addEventListener("click", () => {
+  const kod = [...document.querySelectorAll("#kodKutu input")].map(i => i.value).join("");
+  if (kod.length < 4) { toast("4 haneli kodu yaz."); return; }
+  git("kimlik");
+});
+$("#nfcBasla").addEventListener("click", async () => {
+  const b = $("#nfcBasla"); b.disabled = true;
+  const nfc = $("#nfc"), bar = $("#nfcBar"), d = $("#nfcDurum");
+  nfc.classList.add("okuyor");
+  const adimlar = ["Kart aranıyor…","Çip okunuyor…","Yüzün kimlik fotoğrafıyla eşleştiriliyor…","Doğrulandı"];
+  for (let i = 0; i < adimlar.length; i++) {
+    d.textContent = adimlar[i]; bar.style.width = `${(i+1)*25}%`;
+    await new Promise(r => setTimeout(r, 850));
+  }
+  try {
+    const { data, error } = await db.from("uyeler").insert({
+      ad: kayitBilgi.ad, telefon: kayitBilgi.telefon, ilce: kayitBilgi.ilce,
+      rol: kayitBilgi.rol, beceriler: kayitBilgi.beceriler, dogrulandi: true
+    }).select().single();
+    if (error) throw error;
+    ben = data; sakla("komsum_ben", ben);
+    toast("Kimliğin doğrulandı");
+    rolButonlari();
+    git(ben.rol === "komsu" ? "komsu" : "ihtiyac");
+  } catch (err) {
+    d.textContent = "Kayıt yapılamadı. İnternet bağlantını kontrol edip tekrar dene.";
+  } finally {
+    b.disabled = false; nfc.classList.remove("okuyor"); bar.style.width = "0";
+  }
+});
+
+/* ---------- rol değiştir (demo: iki tarafı tek telefondan göster) ---------- */
+function rolButonlari(){
+  document.querySelectorAll("#rolDegis button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.rol === ben?.rol)));
+}
+$("#rolDegis").addEventListener("click", async e => {
+  const b = e.target.closest("button"); if (!b || !ben || b.dataset.rol === ben.rol) return;
+  ben.rol = b.dataset.rol;
+  if (ben.rol === "komsu" && !(ben.beceriler||[]).length) ben.beceriler = Object.keys(KATEGORILER);
+  sakla("komsum_ben", ben); rolButonlari();
+  db.from("uyeler").update({ rol: ben.rol, beceriler: ben.beceriler }).eq("id", ben.id).then(()=>{});
+  git(ben.rol === "komsu" ? "komsu" : "ihtiyac");
+});
+
+/* ---------- akıllı ilan ayrıştırma ---------- */
+function kucuk(s){ return s.toLocaleLowerCase("tr-TR"); }
+function ayristir(metin){
+  const m = kucuk(metin);
+  const sonuc = { kategori:"Tak & Kur", sure:2, fiyat:null, baslik:"", ustalik:null };
+  // kategori: en çok eşleşen
+  let enIyi = 0;
+  for (const [k, v] of Object.entries(KATEGORILER)) {
+    const puan = v.kelime.filter(w => m.includes(w)).length;
+    if (puan > enIyi) { enIyi = puan; sonuc.kategori = k; }
+  }
+  sonuc.ustalik = USTALIK.find(w => m.includes(w)) || null;
+  // süre
+  const sureSayi = m.match(/(\d+(?:[.,]\d+)?)\s*(?:saat|sa\b)/);
+  const sureKelime = m.match(/(bir|iki|üç|dört|beş|altı|yedi|sekiz|yarım)\s*saat/);
+  if (sureSayi) sonuc.sure = parseFloat(sureSayi[1].replace(",", "."));
+  else if (sureKelime) sonuc.sure = SAYILAR[sureKelime[1]];
+  else if (/yarım gün/.test(m)) sonuc.sure = 4;
+  else if (/bütün gün|tam gün/.test(m)) sonuc.sure = 8;
+  sonuc.sure = Math.min(8, Math.max(0.5, sonuc.sure));
+  // fiyat
+  const fiyat = m.match(/(\d[\d.]*)\s*(?:tl|₺|lira|bin)/) || m.match(/(\d[\d.]*)\s*(?:veririm|öderim|verelim)/);
+  if (fiyat) {
+    let f = parseInt(fiyat[1].replace(/\./g,""), 10);
+    if (/\d\s*bin/.test(fiyat[0])) f *= 1000;
+    sonuc.fiyat = f;
+  }
+  // başlık
+  const ilk = metin.split(/[,.;]/)[0]
+    .replace(/\d[\d.]*\s*(?:tl|₺|lira|bin)\b\S*/gi, "")
+    .replace(/(?:\d+(?:[.,]\d+)?|bir|iki|üç|dört|beş|altı|yedi|sekiz|yarım)\s*saat\S*(?:\s*sürer)?/gi, "")
+    .replace(/\b(?:veririm|öderim|verelim)\b/gi, "")
+    .replace(/\s{2,}/g, " ").trim();
+  sonuc.baslik = ilk ? ilk.charAt(0).toLocaleUpperCase("tr-TR") + ilk.slice(1) : "";
+  if (sonuc.baslik.length > 70) sonuc.baslik = sonuc.baslik.slice(0, 68) + "…";
+  return sonuc;
+}
+function oneriAraligi(kategori, sure){
+  const [a, b] = KATEGORILER[kategori].saat;
+  const yuvarla = n => Math.max(100, Math.round(n/50)*50);
+  return [yuvarla(a*sure), yuvarla(b*sure)];
+}
+
+/* ---------- ses ---------- */
+const SesTanima = window.SpeechRecognition || window.webkitSpeechRecognition;
+let tanima = null, dinliyor = false;
+$("#mik").addEventListener("click", () => {
+  if (!SesTanima) { toast("Bu tarayıcı sesle yazmayı desteklemiyor. Aşağıya yazabilirsin."); $("#serbestMetin").focus(); return; }
+  if (dinliyor) { tanima.stop(); return; }
+  tanima = new SesTanima(); tanima.lang = "tr-TR"; tanima.interimResults = true; tanima.continuous = false;
+  let son = "";
+  tanima.onstart = () => { dinliyor = true; $("#mik").classList.add("dinliyor"); $("#mikYazi").textContent = "Dinliyorum, konuş"; };
+  tanima.onresult = e => { son = [...e.results].map(r => r[0].transcript).join(" "); $("#serbestMetin").value = son; };
+  tanima.onerror = e => { if (e.error === "not-allowed") toast("Mikrofon izni verilmedi. Yazarak da ilan açabilirsin."); };
+  tanima.onend = () => {
+    dinliyor = false; $("#mik").classList.remove("dinliyor"); $("#mikYazi").textContent = "Bas ve işini anlat";
+    if (son.trim()) ilanHazirla(son);
+  };
+  tanima.start();
+});
+$("#anlatBtn").addEventListener("click", () => {
+  const t = $("#serbestMetin").value.trim();
+  if (t.length < 5) { toast("Ne yapılacağını kısaca yaz ya da söyle."); return; }
+  ilanHazirla(t);
+});
+
+/* ---------- ilan onay ---------- */
+function ilanHazirla(metin){
+  const a = ayristir(metin);
+  const aralik = oneriAraligi(a.kategori, a.sure);
+  taslak = { ...a, aciklama: metin, ilce: ben.ilce, fiyat: a.fiyat || Math.round((aralik[0]+aralik[1])/2/50)*50, odeme: "uygulama" };
+  $("#oBaslik").value = taslak.baslik;
+  $("#oAciklama").value = metin;
+  ilceDoldur($("#oIlce"), taslak.ilce);
+  $("#oSure").replaceChildren(...[0.5,1,1.5,2,3,4,5,6,8].map(s => el("option", {value:s, selected: s === taslak.sure ? "" : null}, s === 0.5 ? "Yarım saat" : `${String(s).replace(".", ",")} saat`)));
+  if (![0.5,1,1.5,2,3,4,5,6,8].includes(taslak.sure)) { taslak.sure = 2; $("#oSure").value = "2"; }
+  $("#oKategori").replaceChildren(...Object.keys(KATEGORILER).map(k =>
+    el("button", {type:"button", class:"cip", "aria-pressed": String(k === taslak.kategori), onclick: () => { taslak.kategori = k; cizOnay(); }}, k)));
+  const u = $("#ustalikUyari");
+  if (a.ustalik) { u.textContent = `"${a.ustalik}" ustalık isteyen bir iş olabilir. KomşuM'da elektrik, su, doğalgaz ve araçla taşıma işleri yer almaz. İşin bunlardan biri değilse devam et.`; u.hidden = false; }
+  else u.hidden = true;
+  cizOnay();
+  git("onay");
+}
+function cizOnay(){
+  document.querySelectorAll("#oKategori .cip").forEach(b => b.setAttribute("aria-pressed", String(b.textContent === taslak.kategori)));
+  $("#oFiyat").textContent = tl(taslak.fiyat);
+  const [a, b] = oneriAraligi(taslak.kategori, taslak.sure);
+  let not = `Bu iş ${taslak.ilce}'da genelde ${tl(a)} ile ${tl(b)} arası.`;
+  if (taslak.fiyat < a) not += " Fiyatın biraz düşük, kabul edilmesi uzun sürebilir.";
+  $("#oneri").textContent = not;
+}
+$("#oSure").addEventListener("change", e => { taslak.sure = parseFloat(e.target.value); cizOnay(); });
+$("#oIlce").addEventListener("change", e => { taslak.ilce = e.target.value; cizOnay(); });
+$("#fEksi").addEventListener("click", () => { taslak.fiyat = Math.max(50, taslak.fiyat - 50); cizOnay(); });
+$("#fArti").addEventListener("click", () => { taslak.fiyat = Math.min(20000, taslak.fiyat + 50); cizOnay(); });
+$("#odemeSecim").addEventListener("click", e => {
+  const b = e.target.closest(".cip"); if (!b) return;
+  taslak.odeme = b.dataset.odeme;
+  document.querySelectorAll("#odemeSecim .cip").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+});
+$("#yayinla").addEventListener("click", async () => {
+  const baslik = $("#oBaslik").value.trim();
+  if (baslik.length < 3) { toast("Ne yapılacağını kısaca yaz."); return; }
+  const b = $("#yayinla"); b.disabled = true; b.textContent = "Yayınlanıyor…";
+  const { data, error } = await db.from("ilanlar").insert({
+    sahibi_id: ben.id, sahibi_ad: ben.ad, kategori: taslak.kategori, baslik,
+    aciklama: $("#oAciklama").value.trim(), ilce: taslak.ilce, sure_saat: taslak.sure, fiyat: taslak.fiyat
+  }).select().single();
+  b.disabled = false; b.textContent = "İlanı yayınla";
+  if (error) { toast("İlan yayınlanamadı. Bağlantını kontrol edip tekrar dene."); return; }
+  const odemeler = oku("komsum_odeme") || {}; odemeler[data.id] = taslak.odeme; sakla("komsum_odeme", odemeler);
+  $("#serbestMetin").value = "";
+  toast("İlanın yayında. Yakındaki komşulara haber verdik.");
+  takipAc(data.id);
+});
+
+/* ---------- veri ---------- */
+async function ilanlariGetir(){
+  const { data } = await db.from("ilanlar").select("*").order("created_at", { ascending:false }).limit(100);
+  ilanCache = data || [];
+  return ilanCache;
+}
+async function uyeGetir(id){
+  if (!id) return null;
+  const { data } = await db.from("uyeler").select("*").eq("id", id).single();
+  return data;
+}
+
+/* ---------- ihtiyaç sahibi: ana ---------- */
+async function cizIhtiyac(){
+  if (!ben) return git("karsila");
+  $("#merhaba").textContent = `Merhaba ${ben.ad}, ne yaptıralım?`;
+  const liste = $("#ilanlarim");
+  const ilanlar = (await ilanlariGetir()).filter(i => i.sahibi_id === ben.id);
+  $("#ilanlarimAlan").hidden = !ilanlar.length;
+  liste.replaceChildren(...ilanlar.map(i => ilanKarti(i, () => takipAc(i.id), true)));
+}
+const DURUM_YAZI = { acik:"Komşu bekleniyor", kabul:"Komşu kabul etti", yolda:"Komşu yolda", bitti:"Tamamlandı", iptal:"İptal" };
+function ilanKarti(i, tikla, durumGoster){
+  return el("button", { class:"kart ilan", onclick: tikla },
+    el("h3", {}, i.baslik),
+    el("span", { class:"fiyat" }, tl(i.fiyat)),
+    el("span", { class:"meta" }, `${i.kategori} · ${i.ilce} · ${String(i.sure_saat).replace(".", ",")} saat · ${zaman(i.created_at)}`),
+    durumGoster ? el("span", {}, el("span", { class:`durum ${i.durum}` }, DURUM_YAZI[i.durum])) : null
+  );
+}
+
+/* ---------- ihtiyaç sahibi: takip ---------- */
+async function takipAc(id){ aktifIlanId = id; git("takip"); await cizTakip(); }
+async function cizTakip(){
+  const { data: i } = await db.from("ilanlar").select("*").eq("id", aktifIlanId).single();
+  if (!i) return;
+  $("#tBaslik").textContent = i.baslik;
+  $("#tMeta").textContent = `${tl(i.fiyat)} · ${i.ilce} · ${String(i.sure_saat).replace(".", ",")} saat`;
+  const sira = ["acik","kabul","yolda","bitti"];
+  const n = sira.indexOf(i.durum);
+  const adlar = ["İlan yayında","Bir komşu kabul etti","Komşu yolda","İş tamamlandı"];
+  $("#tAdimlar").replaceChildren(...adlar.map((a, k) =>
+    el("div", { class: `adim ${k < n || (k === n && k === 3) ? "tamam" : k === n ? "simdi" : ""}` }, el("i", {}, k < n || (k===n && k===3) ? "✓" : ""), a)));
+  const kutu = $("#tKomsu"); kutu.replaceChildren();
+  const aks = $("#tAksiyon"); aks.replaceChildren();
+  if (i.kabul_eden_id) {
+    const k = await uyeGetir(i.kabul_eden_id);
+    kutu.append(el("div", { class:"kart komsu-kart" },
+      el("div", { class:"avatar" }, harf(i.kabul_eden_ad)),
+      el("div", { class:"yigin", style:"gap:2px" },
+        el("h3", {}, i.kabul_eden_ad),
+        el("span", { class:"rozet" }, "✓ Kimliği doğrulanmış"),
+        el("span", { class:"ince" }, `★ ${ortalama(k)} · ${k?.is_sayisi || 0} iş tamamladı`))));
+    if (i.durum !== "bitti") aks.append(el("button", { class:"btn ikincil", onclick: () => toast("Mesajlaşma demoda kapalı. Gerçek sürümde numaralar gizli kalarak yazışılacak.") }, "Komşuna yaz"));
+  } else if (i.durum === "acik") {
+    kutu.append(el("p", { class:"ince" }, "Yakındaki komşulara haber verdik. Biri kabul edince burada görünecek."));
+    aks.append(el("button", { class:"btn ikincil", onclick: async () => {
+      await db.from("ilanlar").update({ durum:"iptal", updated_at:new Date().toISOString() }).eq("id", i.id);
+      toast("İlanı kaldırdın."); git("ihtiyac");
+    }}, "İlanı kaldır"));
+  }
+  if (i.durum === "bitti" && !i.puan) {
+    const odeme = (oku("komsum_odeme") || {})[i.id] || "elden";
+    aks.prepend(el("button", { class:"btn yesil", onclick: () => odeme === "uygulama" ? odemeAc(i) : puanAc(i) },
+      odeme === "uygulama" ? "Ödemeyi onayla ve puan ver" : "Komşunu puanla"));
+  }
+  if (i.durum === "bitti" && i.kabul_eden_id) {
+    aks.append(el("button", { class:"btn sari", onclick: () => tekrarCagir(i) }, `${i.kabul_eden_ad} tekrar gelsin`));
+  }
+}
+function tekrarCagir(i){
+  ilanHazirla(i.aciklama || i.baslik);
+  taslak.kategori = i.kategori; taslak.fiyat = i.fiyat; taslak.sure = Number(i.sure_saat);
+  $("#oSure").value = String(taslak.sure); cizOnay();
+  toast(`Gerçek sürümde ilan önce ${i.kabul_eden_ad}'a gider.`);
+}
+
+/* ---------- ödeme (demo) ---------- */
+let odemeIlan = null;
+function odemeAc(i){
+  odemeIlan = i;
+  $("#odTutar").textContent = tl(i.fiyat);
+  $("#odAciklama").textContent = `${i.baslik} · ${i.kabul_eden_ad}`;
+  git("odeme");
+}
+$("#odGeri").addEventListener("click", () => takipAc(odemeIlan.id));
+$("#odOnay").addEventListener("click", () => { toast("Ödeme onaylandı (demo)"); puanAc(odemeIlan); });
+
+/* ---------- puan ---------- */
+let puanIlan = null, secilenPuan = 0;
+function puanAc(i){
+  puanIlan = i; secilenPuan = 0;
+  $("#pBaslik").textContent = `${i.kabul_eden_ad} nasıldı?`;
+  $("#yildizlar").replaceChildren(...[1,2,3,4,5].map(n => el("button", { "aria-label": `${n} yıldız`, "aria-pressed":"false", onclick: () => {
+    secilenPuan = n;
+    document.querySelectorAll("#yildizlar button").forEach((b, k) => b.setAttribute("aria-pressed", String(k < n)));
+    $("#puanGonder").disabled = false;
+  }}, "★")));
+  $("#puanGonder").disabled = true;
+  git("puan");
+}
+$("#puanGonder").addEventListener("click", async () => {
+  await db.from("ilanlar").update({ puan: secilenPuan, updated_at:new Date().toISOString() }).eq("id", puanIlan.id);
+  const k = await uyeGetir(puanIlan.kabul_eden_id);
+  if (k) await db.from("uyeler").update({ puan_toplam: k.puan_toplam + secilenPuan, puan_sayisi: k.puan_sayisi + 1 }).eq("id", k.id);
+  toast("Teşekkürler, puanın komşuna iletildi.");
+  takipAc(puanIlan.id);
+});
+
+/* ---------- komşu: işler ---------- */
+document.querySelector(".sekme-bar").addEventListener("click", e => {
+  const b = e.target.closest(".cip"); if (!b) return;
+  filtre = b.dataset.filtre;
+  document.querySelectorAll(".sekme-bar .cip").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  cizKomsu();
+});
+async function cizKomsu(yeniId){
+  if (!ben) return git("karsila");
+  const hepsi = await ilanlariGetir();
+  const benim = hepsi.filter(i => i.kabul_eden_id === ben.id);
+  const buAy = benim.filter(i => i.durum === "bitti" && new Date(i.updated_at).getMonth() === new Date().getMonth());
+  $("#kKazanc").textContent = tl(buAy.reduce((t, i) => t + i.fiyat, 0));
+  $("#kOzet").textContent = buAy.length ? `${buAy.length} iş tamamladın. Komşuların sana güveniyor.` : "İlk işini kabul et, kazancın burada görünsün.";
+  const aktif = benim.find(i => i.durum === "kabul" || i.durum === "yolda");
+  $("#aktifIsAlan").hidden = !aktif;
+  if (aktif) $("#aktifIs").replaceChildren(ilanKarti(aktif, () => detayAc(aktif.id), true));
+  // Demo: tek telefondan sunum yapılabilsin diye kendi ilanın da listede (etiketli) görünür
+  const acik = hepsi.filter(i => i.durum === "acik" && (filtre === "hepsi" || i.ilce === ben.ilce));
+  const kutu = $("#isler");
+  if (!acik.length) {
+    kutu.replaceChildren(el("div", { class:"bos" }, filtre === "ilce" ? `${ben.ilce}'da şu an açık iş yok. Tüm Ankara'ya bakabilirsin.` : "Şu an açık iş yok. Yeni ilan gelince burada görünecek."));
+    return;
+  }
+  kutu.replaceChildren(...acik.map(i => {
+    const k = ilanKarti(i, () => detayAc(i.id), false);
+    if (i.sahibi_id === ben.id) k.append(el("span", { class:"kendi" }, "Senin ilanın (demo için kabul edebilirsin)"));
+    if (i.id === yeniId) k.classList.add("yeni");
+    return k;
+  }));
+}
+async function detayAc(id){
+  const { data: i } = await db.from("ilanlar").select("*").eq("id", id).single();
+  if (!i) return;
+  aktifIlanId = id;
+  $("#dBaslik").textContent = i.baslik;
+  $("#dFiyat").textContent = tl(i.fiyat);
+  $("#dAciklama").textContent = i.aciklama || "";
+  $("#dMeta").textContent = `${i.kategori} · ${i.ilce} · ${String(i.sure_saat).replace(".", ",")} saat · ${i.sahibi_ad} · ${zaman(i.created_at)}`;
+  const aks = $("#dAksiyon"); aks.replaceChildren();
+  const guncelle = async (degisim, mesaj, sonra) => {
+    const { error } = await db.from("ilanlar").update({ ...degisim, updated_at:new Date().toISOString() }).eq("id", i.id);
+    if (error) { toast("İşlem yapılamadı, tekrar dene."); return; }
+    toast(mesaj); sonra ? sonra() : detayAc(i.id);
+  };
+  if (i.durum === "acik") {
+    aks.append(el("button", { class:"btn", onclick: async e => {
+      e.currentTarget.disabled = true;
+      // yarış durumunda sadece hâlâ açıksa kabul et
+      const { data, error } = await db.from("ilanlar").update({ durum:"kabul", kabul_eden_id: ben.id, kabul_eden_ad: ben.ad, updated_at:new Date().toISOString() })
+        .eq("id", i.id).eq("durum", "acik").select();
+      if (error || !data?.length) { toast("Bu işi az önce başka bir komşu aldı."); git("komsu"); return; }
+      toast(`İş senin. ${i.sahibi_ad}'a haber verdik.`); detayAc(i.id);
+    }}, "İşi kabul et"));
+  } else if (i.kabul_eden_id === ben.id && i.durum === "kabul") {
+    aks.append(el("button", { class:"btn", onclick: () => guncelle({ durum:"yolda" }, "Yola çıktığını bildirdik.") }, "Yola çıktım"));
+  } else if (i.kabul_eden_id === ben.id && i.durum === "yolda") {
+    aks.append(el("button", { class:"btn yesil", onclick: async () => {
+      const k = await uyeGetir(ben.id);
+      if (k) await db.from("uyeler").update({ is_sayisi: (k.is_sayisi||0) + 1 }).eq("id", ben.id);
+      guncelle({ durum:"bitti" }, `Eline sağlık, ${tl(i.fiyat)} kazandın.`, () => git("komsu"));
+    }}, "İşi bitirdim"));
+  } else if (i.durum === "bitti") {
+    aks.append(el("p", { class:"ince" }, "Bu iş tamamlandı."));
+  } else {
+    aks.append(el("p", { class:"ince" }, "Bu işi başka bir komşu aldı."));
+  }
+  git("isdetay");
+}
+
+/* ---------- canlı güncelleme ---------- */
+db.channel("ilanlar-canli")
+  .on("postgres_changes", { event:"*", schema:"public", table:"ilanlar" }, p => {
+    const aktifEkran = document.querySelector(".ekran:not([hidden])")?.id;
+    if (aktifEkran === "e-komsu") {
+      cizKomsu(p.eventType === "INSERT" ? p.new.id : null);
+      if (p.eventType === "INSERT" && ben) toast(`Yeni iş: ${p.new.baslik} · ${tl(p.new.fiyat)}`);
+    }
+    if (aktifEkran === "e-takip" && p.new?.id === aktifIlanId) {
+      cizTakip();
+      if (p.new.durum === "kabul" && p.old?.durum !== "kabul") toast(`${p.new.kabul_eden_ad} işini kabul etti`);
+    }
+    if (aktifEkran === "e-ihtiyac") cizIhtiyac();
+  })
+  .subscribe();
+
+/* ---------- başlangıç ---------- */
+if (ben) {
+  // kayıt silinmiş olabilir
+  uyeGetir(ben.id).then(u => { if (!u) { sil("komsum_ben"); ben = null; git("karsila"); } });
+  rolButonlari();
+  git(ben.rol === "komsu" ? "komsu" : "ihtiyac");
+} else git("karsila");
+</script>
+</body>
+</html>
