@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-10-24T01:11:47+00:00",
+ "checkedAt": "2026-10-24T07:03:59+00:00",
  "cams": {
   "new-york": {
    "ok": true,
@@ -46,7 +46,7 @@
   "spanish-town": {
    "ok": true,
    "yt": "KBnlexbryqE",
-   "state": "unknown",
+   "state": "live",
    "title": "🟢 Spanish Town Jamaica LIVE 24/7 | St Catherine Street View & Daily Life",
    "channel": "https://www.youtube.com/@SeeJamaica"
   },
