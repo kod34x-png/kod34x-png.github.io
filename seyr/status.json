@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-10-28T01:22:21+00:00",
+ "checkedAt": "2026-10-28T07:21:21+00:00",
  "cams": {
   "new-york": {
    "ok": true,
@@ -65,9 +65,10 @@
    "channel": "https://www.youtube.com/@webcamsdemexico"
   },
   "cancun": {
-   "ok": false,
+   "ok": true,
    "yt": "zhRcRgZEoQw",
-   "state": "down",
+   "state": "unknown",
+   "title": "",
    "channel": "https://www.youtube.com/@webcamsdemexico_live"
   },
   "venedik": {
@@ -104,9 +105,10 @@
    "channel": "https://www.youtube.com/@SkylineWebcams"
   },
   "cape-town-masa-dagi": {
-   "ok": false,
+   "ok": true,
    "yt": "fhUEi-ka6Ks",
-   "state": "down",
+   "state": "unknown",
+   "title": "",
    "channel": "https://www.youtube.com/@VanillaISP"
   },
   "cape-town-sea-point": {
@@ -130,9 +132,10 @@
    "channel": "https://www.youtube.com/@%E6%B8%8B%E8%B0%B7%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E5%95%86%E5%BA%97%E8%A1%97"
   },
   "tokyo-ginza": {
-   "ok": false,
+   "ok": true,
    "yt": "1Xm5bjdI5hU",
-   "state": "down",
+   "state": "unknown",
+   "title": "",
    "channel": "https://www.youtube.com/@LIVE-hr9eo"
   },
   "fuji": {
@@ -143,33 +146,38 @@
    "channel": "https://www.youtube.com/@fujiyamanavi"
   },
   "seul": {
-   "ok": false,
+   "ok": true,
    "yt": "3Uf3w-UHB4U",
-   "state": "down",
+   "state": "unknown",
+   "title": "",
    "channel": "https://www.youtube.com/@247SeoulLiveCam"
   },
   "busan": {
-   "ok": false,
+   "ok": true,
    "yt": "OSnuM2fNovg",
-   "state": "down",
+   "state": "unknown",
+   "title": "",
    "channel": "https://www.youtube.com/@BusanLive"
   },
   "seul-myeongdong": {
-   "ok": false,
+   "ok": true,
    "yt": "0iElYWnfHZM",
-   "state": "down",
+   "state": "unknown",
+   "title": "",
    "channel": "https://www.youtube.com/@%EA%B0%80%ED%86%A8%EB%A6%AD%EC%9D%B8%ED%84%B0%EB%84%B7%EA%B5%BF%EB%89%B4%EC%8A%A4"
   },
   "seul-han": {
-   "ok": false,
+   "ok": true,
    "yt": "_gmTN6ssF7I",
-   "state": "down",
+   "state": "unknown",
+   "title": "",
    "channel": "https://www.youtube.com/@GiGAeyesLiveTV"
   },
   "seul-ddp": {
-   "ok": false,
+   "ok": true,
    "yt": "GOt7UVVp-5Y",
-   "state": "down",
+   "state": "unknown",
+   "title": "",
    "channel": "https://www.youtube.com/@GiGAeyesLiveTV"
   },
   "bangkok": {
