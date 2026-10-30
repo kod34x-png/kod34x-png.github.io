@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-10-30T13:08:06+00:00",
+ "checkedAt": "2026-10-30T22:31:33+00:00",
  "cams": {
   "new-york": {
    "ok": true,
@@ -222,24 +222,24 @@
    "why": "video 200"
   },
   "ny-times-45": {
-   "ok": true,
+   "ok": false,
    "state": "img",
-   "why": "ok"
+   "why": "URLError (deneme 1)"
   },
   "ny-broadway-42": {
-   "ok": true,
+   "ok": false,
    "state": "img",
-   "why": "ok"
+   "why": "URLError (deneme 1)"
   },
   "ny-times-46n": {
-   "ok": true,
+   "ok": false,
    "state": "img",
-   "why": "ok"
+   "why": "URLError (deneme 1)"
   },
   "ny-times-46e": {
-   "ok": true,
+   "ok": false,
    "state": "img",
-   "why": "ok"
+   "why": "URLError (deneme 1)"
   },
   "madrid-granvia-clavel": {
    "ok": true,
