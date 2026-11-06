@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-11-05T20:05:58+00:00",
+ "checkedAt": "2026-11-06T07:00:06+00:00",
  "cams": {
   "new-york": {
    "ok": true,
@@ -277,9 +277,9 @@
    "why": "ok"
   },
   "hk-causeway-bay": {
-   "ok": false,
+   "ok": true,
    "state": "img",
-   "why": "200 image/jpeg 5476B (deneme 1)"
+   "why": "ok"
   },
   "hk-wan-chai": {
    "ok": true,
