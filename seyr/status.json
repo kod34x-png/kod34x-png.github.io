@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-11-08T22:16:39+00:00",
+ "checkedAt": "2026-11-09T06:48:41+00:00",
  "cams": {
   "new-york": {
    "ok": true,
@@ -279,7 +279,7 @@
   "hk-causeway-bay": {
    "ok": false,
    "state": "img",
-   "why": "200 image/jpeg 4939B (deneme 1)"
+   "why": "200 image/jpeg 5892B (deneme 1)"
   },
   "hk-wan-chai": {
    "ok": true,
@@ -287,14 +287,14 @@
    "why": "ok"
   },
   "hk-nathan": {
-   "ok": true,
+   "ok": false,
    "state": "img",
-   "why": "ok"
+   "why": "200 image/jpeg 5892B (deneme 1)"
   },
   "hk-tsim-sha-tsui": {
-   "ok": true,
+   "ok": false,
    "state": "img",
-   "why": "ok"
+   "why": "200 image/jpeg 5892B (deneme 1)"
   },
   "hk-central": {
    "ok": true,
